@@ -1,0 +1,954 @@
+1613663485952	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofilex7PXwj"
+
+(firefox:14509): Gtk-WARNING **: 15:51:25.973: Theme parsing error: gtk.css:1:8: Expected a valid selector
+
+(firefox:14509): Gtk-WARNING **: 15:51:25.974: Theme parsing error: gtk.css:11:2: Expected a valid selector
+
+(/usr/lib/firefox/firefox:14577): Gtk-WARNING **: 15:51:26.690: Theme parsing error: gtk.css:1:8: Expected a valid selector
+
+(/usr/lib/firefox/firefox:14577): Gtk-WARNING **: 15:51:26.690: Theme parsing error: gtk.css:11:2: Expected a valid selector
+
+(/usr/lib/firefox/firefox:14597): Gtk-WARNING **: 15:51:26.822: Theme parsing error: gtk.css:1:8: Expected a valid selector
+
+(/usr/lib/firefox/firefox:14597): Gtk-WARNING **: 15:51:26.822: Theme parsing error: gtk.css:11:2: Expected a valid selector
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1613663487662	Marionette	INFO	Listening on port 40277
+
+(/usr/lib/firefox/firefox:14677): Gtk-WARNING **: 15:51:27.695: Theme parsing error: gtk.css:1:8: Expected a valid selector
+
+(/usr/lib/firefox/firefox:14677): Gtk-WARNING **: 15:51:27.696: Theme parsing error: gtk.css:11:2: Expected a valid selector
+1613663487778	Marionette	WARN	TLS certificate errors will be ignored for this session
+1613663487790	Marionette	ERROR	[15] No reply from Marionette:Register
+JavaScript error: , line 0: uncaught exception: Object
+JavaScript error: , line 0: uncaught exception: Object
+JavaScript error: , line 0: uncaught exception: Object
+JavaScript error: , line 0: uncaught exception: Object
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+1613663727996	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileGvNhMa"
+
+(firefox:14857): Gtk-WARNING **: 15:55:28.034: Theme parsing error: gtk.css:1:8: Expected a valid selector
+
+(firefox:14857): Gtk-WARNING **: 15:55:28.035: Theme parsing error: gtk.css:11:2: Expected a valid selector
+
+(/usr/lib/firefox/firefox:14909): Gtk-WARNING **: 15:55:28.718: Theme parsing error: gtk.css:1:8: Expected a valid selector
+
+(/usr/lib/firefox/firefox:14909): Gtk-WARNING **: 15:55:28.718: Theme parsing error: gtk.css:11:2: Expected a valid selector
+
+(/usr/lib/firefox/firefox:14929): Gtk-WARNING **: 15:55:28.842: Theme parsing error: gtk.css:1:8: Expected a valid selector
+
+(/usr/lib/firefox/firefox:14929): Gtk-WARNING **: 15:55:28.842: Theme parsing error: gtk.css:11:2: Expected a valid selector
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1613663729558	Marionette	INFO	Listening on port 43587
+1613663729617	Marionette	WARN	TLS certificate errors will be ignored for this session
+1613663729624	Marionette	ERROR	[15] No reply from Marionette:Register
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+
+(/usr/lib/firefox/firefox:15006): Gtk-WARNING **: 15:55:29.731: Theme parsing error: gtk.css:1:8: Expected a valid selector
+
+(/usr/lib/firefox/firefox:15006): Gtk-WARNING **: 15:55:29.732: Theme parsing error: gtk.css:11:2: Expected a valid selector
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 716: Error: Phase "Sqlite.jsm: wait until all connections are closed" is finished, it is too late to register completion condition "protections.sqlite#0: waiting for shutdown"
+1613663745424	Marionette	INFO	Stopped listening on port 43587
+1613663758801	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileT7uhT0"
+
+(firefox:15118): Gtk-WARNING **: 15:55:58.832: Theme parsing error: gtk.css:1:8: Expected a valid selector
+
+(firefox:15118): Gtk-WARNING **: 15:55:58.833: Theme parsing error: gtk.css:11:2: Expected a valid selector
+
+(/usr/lib/firefox/firefox:15170): Gtk-WARNING **: 15:55:59.492: Theme parsing error: gtk.css:1:8: Expected a valid selector
+
+(/usr/lib/firefox/firefox:15170): Gtk-WARNING **: 15:55:59.493: Theme parsing error: gtk.css:11:2: Expected a valid selector
+
+(/usr/lib/firefox/firefox:15190): Gtk-WARNING **: 15:55:59.622: Theme parsing error: gtk.css:1:8: Expected a valid selector
+
+(/usr/lib/firefox/firefox:15190): Gtk-WARNING **: 15:55:59.622: Theme parsing error: gtk.css:11:2: Expected a valid selector
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1613663760471	Marionette	INFO	Listening on port 44711
+
+(/usr/lib/firefox/firefox:15265): Gtk-WARNING **: 15:56:00.504: Theme parsing error: gtk.css:1:8: Expected a valid selector
+
+(/usr/lib/firefox/firefox:15265): Gtk-WARNING **: 15:56:00.504: Theme parsing error: gtk.css:11:2: Expected a valid selector
+1613663760575	Marionette	WARN	TLS certificate errors will be ignored for this session
+1613663760586	Marionette	ERROR	[15] No reply from Marionette:Register
+1613663769593	Marionette	INFO	Stopped listening on port 44711
+1613663797844	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileHVia2c"
+
+(firefox:15352): Gtk-WARNING **: 15:56:37.866: Theme parsing error: gtk.css:1:8: Expected a valid selector
+
+(firefox:15352): Gtk-WARNING **: 15:56:37.867: Theme parsing error: gtk.css:11:2: Expected a valid selector
+
+(/usr/lib/firefox/firefox:15404): Gtk-WARNING **: 15:56:38.609: Theme parsing error: gtk.css:1:8: Expected a valid selector
+
+(/usr/lib/firefox/firefox:15404): Gtk-WARNING **: 15:56:38.610: Theme parsing error: gtk.css:11:2: Expected a valid selector
+
+(/usr/lib/firefox/firefox:15424): Gtk-WARNING **: 15:56:38.745: Theme parsing error: gtk.css:1:8: Expected a valid selector
+
+(/usr/lib/firefox/firefox:15424): Gtk-WARNING **: 15:56:38.745: Theme parsing error: gtk.css:11:2: Expected a valid selector
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1613663799589	Marionette	INFO	Listening on port 34519
+1613663799700	Marionette	WARN	TLS certificate errors will be ignored for this session
+1613663799708	Marionette	ERROR	[15] No reply from Marionette:Register
+
+(/usr/lib/firefox/firefox:15498): Gtk-WARNING **: 15:56:39.757: Theme parsing error: gtk.css:1:8: Expected a valid selector
+
+(/usr/lib/firefox/firefox:15498): Gtk-WARNING **: 15:56:39.758: Theme parsing error: gtk.css:11:2: Expected a valid selector
+1613663809531	Marionette	INFO	Stopped listening on port 34519
+1613663816460	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile8fhGVI"
+
+(firefox:15574): Gtk-WARNING **: 15:56:56.483: Theme parsing error: gtk.css:1:8: Expected a valid selector
+
+(firefox:15574): Gtk-WARNING **: 15:56:56.484: Theme parsing error: gtk.css:11:2: Expected a valid selector
+
+(/usr/lib/firefox/firefox:15624): Gtk-WARNING **: 15:56:57.134: Theme parsing error: gtk.css:1:8: Expected a valid selector
+
+(/usr/lib/firefox/firefox:15624): Gtk-WARNING **: 15:56:57.135: Theme parsing error: gtk.css:11:2: Expected a valid selector
+
+(/usr/lib/firefox/firefox:15644): Gtk-WARNING **: 15:56:57.266: Theme parsing error: gtk.css:1:8: Expected a valid selector
+
+(/usr/lib/firefox/firefox:15644): Gtk-WARNING **: 15:56:57.267: Theme parsing error: gtk.css:11:2: Expected a valid selector
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1613663818075	Marionette	INFO	Listening on port 40913
+
+(/usr/lib/firefox/firefox:15724): Gtk-WARNING **: 15:56:58.110: Theme parsing error: gtk.css:1:8: Expected a valid selector
+
+(/usr/lib/firefox/firefox:15724): Gtk-WARNING **: 15:56:58.111: Theme parsing error: gtk.css:11:2: Expected a valid selector
+1613663818181	Marionette	WARN	TLS certificate errors will be ignored for this session
+1613663818194	Marionette	ERROR	[15] No reply from Marionette:Register
+1613663828601	Marionette	INFO	Stopped listening on port 40913
+1613663833220	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileT518En"
+
+(firefox:15791): Gtk-WARNING **: 15:57:13.253: Theme parsing error: gtk.css:1:8: Expected a valid selector
+
+(firefox:15791): Gtk-WARNING **: 15:57:13.254: Theme parsing error: gtk.css:11:2: Expected a valid selector
+
+(/usr/lib/firefox/firefox:15841): Gtk-WARNING **: 15:57:13.953: Theme parsing error: gtk.css:1:8: Expected a valid selector
+
+(/usr/lib/firefox/firefox:15841): Gtk-WARNING **: 15:57:13.953: Theme parsing error: gtk.css:11:2: Expected a valid selector
+
+(/usr/lib/firefox/firefox:15861): Gtk-WARNING **: 15:57:14.081: Theme parsing error: gtk.css:1:8: Expected a valid selector
+
+(/usr/lib/firefox/firefox:15861): Gtk-WARNING **: 15:57:14.082: Theme parsing error: gtk.css:11:2: Expected a valid selector
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1613663834943	Marionette	INFO	Listening on port 39649
+1613663835041	Marionette	WARN	TLS certificate errors will be ignored for this session
+1613663835051	Marionette	ERROR	[15] No reply from Marionette:Register
+
+(/usr/lib/firefox/firefox:15940): Gtk-WARNING **: 15:57:15.104: Theme parsing error: gtk.css:1:8: Expected a valid selector
+
+(/usr/lib/firefox/firefox:15940): Gtk-WARNING **: 15:57:15.104: Theme parsing error: gtk.css:11:2: Expected a valid selector
+JavaScript error: , line 0: uncaught exception: Object
+JavaScript error: , line 0: uncaught exception: Object
+JavaScript error: , line 0: uncaught exception: Object
+1613663848589	Marionette	INFO	Stopped listening on port 39649
+1613664153355	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileXuOwee"
+
+(firefox:16131): Gtk-WARNING **: 16:02:33.394: Theme parsing error: gtk.css:1:8: Expected a valid selector
+
+(firefox:16131): Gtk-WARNING **: 16:02:33.395: Theme parsing error: gtk.css:11:2: Expected a valid selector
+
+(/usr/lib/firefox/firefox:16183): Gtk-WARNING **: 16:02:34.208: Theme parsing error: gtk.css:1:8: Expected a valid selector
+
+(/usr/lib/firefox/firefox:16183): Gtk-WARNING **: 16:02:34.209: Theme parsing error: gtk.css:11:2: Expected a valid selector
+
+(/usr/lib/firefox/firefox:16203): Gtk-WARNING **: 16:02:34.337: Theme parsing error: gtk.css:1:8: Expected a valid selector
+
+(/usr/lib/firefox/firefox:16203): Gtk-WARNING **: 16:02:34.337: Theme parsing error: gtk.css:11:2: Expected a valid selector
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+
+(/usr/lib/firefox/firefox:16277): Gtk-WARNING **: 16:02:35.197: Theme parsing error: gtk.css:1:8: Expected a valid selector
+
+(/usr/lib/firefox/firefox:16277): Gtk-WARNING **: 16:02:35.198: Theme parsing error: gtk.css:11:2: Expected a valid selector
+1613664155268	Marionette	INFO	Listening on port 39595
+1613664155375	Marionette	WARN	TLS certificate errors will be ignored for this session
+1613664155386	Marionette	ERROR	[15] No reply from Marionette:Register
+1613664173087	Marionette	INFO	Stopped listening on port 39595
+1613664321053	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofilekhexB1"
+
+(firefox:16453): Gtk-WARNING **: 16:05:21.083: Theme parsing error: gtk.css:1:8: Expected a valid selector
+
+(firefox:16453): Gtk-WARNING **: 16:05:21.084: Theme parsing error: gtk.css:11:2: Expected a valid selector
+
+(/usr/lib/firefox/firefox:16503): Gtk-WARNING **: 16:05:21.801: Theme parsing error: gtk.css:1:8: Expected a valid selector
+
+(/usr/lib/firefox/firefox:16503): Gtk-WARNING **: 16:05:21.802: Theme parsing error: gtk.css:11:2: Expected a valid selector
+
+(/usr/lib/firefox/firefox:16523): Gtk-WARNING **: 16:05:21.934: Theme parsing error: gtk.css:1:8: Expected a valid selector
+
+(/usr/lib/firefox/firefox:16523): Gtk-WARNING **: 16:05:21.934: Theme parsing error: gtk.css:11:2: Expected a valid selector
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1613664322739	Marionette	INFO	Listening on port 43567
+
+(/usr/lib/firefox/firefox:16598): Gtk-WARNING **: 16:05:22.786: Theme parsing error: gtk.css:1:8: Expected a valid selector
+
+(/usr/lib/firefox/firefox:16598): Gtk-WARNING **: 16:05:22.786: Theme parsing error: gtk.css:11:2: Expected a valid selector
+1613664322836	Marionette	WARN	TLS certificate errors will be ignored for this session
+1613664322845	Marionette	ERROR	[15] No reply from Marionette:Register
+1613664330628	Marionette	INFO	Stopped listening on port 43567
+1613664336378	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileIIUdew"
+
+(firefox:16677): Gtk-WARNING **: 16:05:36.399: Theme parsing error: gtk.css:1:8: Expected a valid selector
+
+(firefox:16677): Gtk-WARNING **: 16:05:36.400: Theme parsing error: gtk.css:11:2: Expected a valid selector
+
+(/usr/lib/firefox/firefox:16728): Gtk-WARNING **: 16:05:37.114: Theme parsing error: gtk.css:1:8: Expected a valid selector
+
+(/usr/lib/firefox/firefox:16728): Gtk-WARNING **: 16:05:37.114: Theme parsing error: gtk.css:11:2: Expected a valid selector
+
+(/usr/lib/firefox/firefox:16748): Gtk-WARNING **: 16:05:37.242: Theme parsing error: gtk.css:1:8: Expected a valid selector
+
+(/usr/lib/firefox/firefox:16748): Gtk-WARNING **: 16:05:37.242: Theme parsing error: gtk.css:11:2: Expected a valid selector
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+
+(/usr/lib/firefox/firefox:16821): Gtk-WARNING **: 16:05:38.148: Theme parsing error: gtk.css:1:8: Expected a valid selector
+
+(/usr/lib/firefox/firefox:16821): Gtk-WARNING **: 16:05:38.148: Theme parsing error: gtk.css:11:2: Expected a valid selector
+1613664338255	Marionette	INFO	Listening on port 41385
+1613664338297	Marionette	WARN	TLS certificate errors will be ignored for this session
+1613664338307	Marionette	ERROR	[15] No reply from Marionette:Register
+1613664347698	Marionette	INFO	Stopped listening on port 41385
+1613664353100	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileO6Foem"
+
+(firefox:16893): Gtk-WARNING **: 16:05:53.121: Theme parsing error: gtk.css:1:8: Expected a valid selector
+
+(firefox:16893): Gtk-WARNING **: 16:05:53.121: Theme parsing error: gtk.css:11:2: Expected a valid selector
+
+(/usr/lib/firefox/firefox:16945): Gtk-WARNING **: 16:05:53.836: Theme parsing error: gtk.css:1:8: Expected a valid selector
+
+(/usr/lib/firefox/firefox:16945): Gtk-WARNING **: 16:05:53.836: Theme parsing error: gtk.css:11:2: Expected a valid selector
+
+(/usr/lib/firefox/firefox:16965): Gtk-WARNING **: 16:05:53.970: Theme parsing error: gtk.css:1:8: Expected a valid selector
+
+(/usr/lib/firefox/firefox:16965): Gtk-WARNING **: 16:05:53.971: Theme parsing error: gtk.css:11:2: Expected a valid selector
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+
+(/usr/lib/firefox/firefox:17038): Gtk-WARNING **: 16:05:54.835: Theme parsing error: gtk.css:1:8: Expected a valid selector
+
+(/usr/lib/firefox/firefox:17038): Gtk-WARNING **: 16:05:54.835: Theme parsing error: gtk.css:11:2: Expected a valid selector
+1613664354922	Marionette	INFO	Listening on port 38239
+1613664355018	Marionette	WARN	TLS certificate errors will be ignored for this session
+1613664355029	Marionette	ERROR	[15] No reply from Marionette:Register
+JavaScript error: , line 0: uncaught exception: Object
+JavaScript error: , line 0: uncaught exception: Object
+JavaScript error: , line 0: uncaught exception: Object
+JavaScript error: , line 0: uncaught exception: Object
+JavaScript error: , line 0: uncaught exception: Object
+1613664364614	Marionette	INFO	Stopped listening on port 38239
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1613664527123	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileuJoMmK"
+
+(firefox:17176): Gtk-WARNING **: 16:08:47.144: Theme parsing error: gtk.css:1:8: Expected a valid selector
+
+(firefox:17176): Gtk-WARNING **: 16:08:47.144: Theme parsing error: gtk.css:11:2: Expected a valid selector
+
+(/usr/lib/firefox/firefox:17226): Gtk-WARNING **: 16:08:47.832: Theme parsing error: gtk.css:1:8: Expected a valid selector
+
+(/usr/lib/firefox/firefox:17226): Gtk-WARNING **: 16:08:47.833: Theme parsing error: gtk.css:11:2: Expected a valid selector
+
+(/usr/lib/firefox/firefox:17246): Gtk-WARNING **: 16:08:47.962: Theme parsing error: gtk.css:1:8: Expected a valid selector
+
+(/usr/lib/firefox/firefox:17246): Gtk-WARNING **: 16:08:47.962: Theme parsing error: gtk.css:11:2: Expected a valid selector
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1613664528840	Marionette	INFO	Listening on port 46589
+
+(/usr/lib/firefox/firefox:17323): Gtk-WARNING **: 16:08:48.912: Theme parsing error: gtk.css:1:8: Expected a valid selector
+
+(/usr/lib/firefox/firefox:17323): Gtk-WARNING **: 16:08:48.912: Theme parsing error: gtk.css:11:2: Expected a valid selector
+1613664528965	Marionette	WARN	TLS certificate errors will be ignored for this session
+1613664528978	Marionette	ERROR	[15] No reply from Marionette:Register
+JavaScript error: , line 0: uncaught exception: Object
+JavaScript error: , line 0: uncaught exception: Object
+Marionette threw an error: TypeError: chromeWindow is null
+waitForNavigationCompleted@chrome://marionette/content/navigate.js:349:3
+GeckoDriver.prototype.navigateTo@chrome://marionette/content/driver.js:1250:18
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+JavaScript error: resource:///actors/ContentMetaChild.jsm, line 179: InvalidStateError: JSWindowActorChild.sendAsyncMessage: JSWindowActorChild cannot send at the moment
+1613664535415	Marionette	INFO	Stopped listening on port 46589
+1613664624248	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofilenR41OA"
+
+(firefox:17439): Gtk-WARNING **: 16:10:24.270: Theme parsing error: gtk.css:1:8: Expected a valid selector
+
+(firefox:17439): Gtk-WARNING **: 16:10:24.271: Theme parsing error: gtk.css:11:2: Expected a valid selector
+
+(/usr/lib/firefox/firefox:17491): Gtk-WARNING **: 16:10:24.968: Theme parsing error: gtk.css:1:8: Expected a valid selector
+
+(/usr/lib/firefox/firefox:17491): Gtk-WARNING **: 16:10:24.968: Theme parsing error: gtk.css:11:2: Expected a valid selector
+
+(/usr/lib/firefox/firefox:17511): Gtk-WARNING **: 16:10:25.096: Theme parsing error: gtk.css:1:8: Expected a valid selector
+
+(/usr/lib/firefox/firefox:17511): Gtk-WARNING **: 16:10:25.097: Theme parsing error: gtk.css:11:2: Expected a valid selector
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1613664625759	Marionette	INFO	Listening on port 35155
+1613664625913	Marionette	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1613664625922	Marionette	ERROR	[15] No reply from Marionette:Register
+
+(/usr/lib/firefox/firefox:17586): Gtk-WARNING **: 16:10:25.983: Theme parsing error: gtk.css:1:8: Expected a valid selector
+
+(/usr/lib/firefox/firefox:17586): Gtk-WARNING **: 16:10:25.984: Theme parsing error: gtk.css:11:2: Expected a valid selector
+1613664635313	Marionette	INFO	Stopped listening on port 35155
+1613664654251	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileu63JNk"
+
+(firefox:17691): Gtk-WARNING **: 16:10:54.287: Theme parsing error: gtk.css:1:8: Expected a valid selector
+
+(firefox:17691): Gtk-WARNING **: 16:10:54.288: Theme parsing error: gtk.css:11:2: Expected a valid selector
+
+(/usr/lib/firefox/firefox:17742): Gtk-WARNING **: 16:10:54.990: Theme parsing error: gtk.css:1:8: Expected a valid selector
+
+(/usr/lib/firefox/firefox:17742): Gtk-WARNING **: 16:10:54.990: Theme parsing error: gtk.css:11:2: Expected a valid selector
+
+(/usr/lib/firefox/firefox:17762): Gtk-WARNING **: 16:10:55.118: Theme parsing error: gtk.css:1:8: Expected a valid selector
+
+(/usr/lib/firefox/firefox:17762): Gtk-WARNING **: 16:10:55.118: Theme parsing error: gtk.css:11:2: Expected a valid selector
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+
+(/usr/lib/firefox/firefox:17838): Gtk-WARNING **: 16:10:55.980: Theme parsing error: gtk.css:1:8: Expected a valid selector
+
+(/usr/lib/firefox/firefox:17838): Gtk-WARNING **: 16:10:55.981: Theme parsing error: gtk.css:11:2: Expected a valid selector
+1613664656056	Marionette	INFO	Listening on port 46061
+1613664656170	Marionette	WARN	TLS certificate errors will be ignored for this session
+1613664656180	Marionette	ERROR	[15] No reply from Marionette:Register
+1613664662483	Marionette	INFO	Stopped listening on port 46061
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1613664673703	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileRaBw9C"
+
+(firefox:17910): Gtk-WARNING **: 16:11:13.738: Theme parsing error: gtk.css:1:8: Expected a valid selector
+
+(firefox:17910): Gtk-WARNING **: 16:11:13.739: Theme parsing error: gtk.css:11:2: Expected a valid selector
+
+(/usr/lib/firefox/firefox:17963): Gtk-WARNING **: 16:11:14.409: Theme parsing error: gtk.css:1:8: Expected a valid selector
+
+(/usr/lib/firefox/firefox:17963): Gtk-WARNING **: 16:11:14.409: Theme parsing error: gtk.css:11:2: Expected a valid selector
+
+(/usr/lib/firefox/firefox:17983): Gtk-WARNING **: 16:11:14.542: Theme parsing error: gtk.css:1:8: Expected a valid selector
+
+(/usr/lib/firefox/firefox:17983): Gtk-WARNING **: 16:11:14.543: Theme parsing error: gtk.css:11:2: Expected a valid selector
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1613664675332	Marionette	INFO	Listening on port 34461
+
+(/usr/lib/firefox/firefox:18061): Gtk-WARNING **: 16:11:15.389: Theme parsing error: gtk.css:1:8: Expected a valid selector
+
+(/usr/lib/firefox/firefox:18061): Gtk-WARNING **: 16:11:15.389: Theme parsing error: gtk.css:11:2: Expected a valid selector
+1613664675440	Marionette	WARN	TLS certificate errors will be ignored for this session
+1613664675451	Marionette	ERROR	[15] No reply from Marionette:Register
+1613664681467	Marionette	INFO	Stopped listening on port 34461
+1613664707577	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofilehvDD3x"
+
+(firefox:18152): Gtk-WARNING **: 16:11:47.607: Theme parsing error: gtk.css:1:8: Expected a valid selector
+
+(firefox:18152): Gtk-WARNING **: 16:11:47.607: Theme parsing error: gtk.css:11:2: Expected a valid selector
+
+(/usr/lib/firefox/firefox:18204): Gtk-WARNING **: 16:11:48.322: Theme parsing error: gtk.css:1:8: Expected a valid selector
+
+(/usr/lib/firefox/firefox:18204): Gtk-WARNING **: 16:11:48.322: Theme parsing error: gtk.css:11:2: Expected a valid selector
+
+(/usr/lib/firefox/firefox:18224): Gtk-WARNING **: 16:11:48.451: Theme parsing error: gtk.css:1:8: Expected a valid selector
+
+(/usr/lib/firefox/firefox:18224): Gtk-WARNING **: 16:11:48.451: Theme parsing error: gtk.css:11:2: Expected a valid selector
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1613664709192	Marionette	INFO	Listening on port 45343
+
+(/usr/lib/firefox/firefox:18304): Gtk-WARNING **: 16:11:49.333: Theme parsing error: gtk.css:1:8: Expected a valid selector
+
+(/usr/lib/firefox/firefox:18304): Gtk-WARNING **: 16:11:49.333: Theme parsing error: gtk.css:11:2: Expected a valid selector
+1613664709485	Marionette	WARN	TLS certificate errors will be ignored for this session
+1613664709500	Marionette	ERROR	[15] No reply from Marionette:Register
+1613664716403	Marionette	INFO	Stopped listening on port 45343
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1613664734481	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile5cafvg"
+
+(firefox:18393): Gtk-WARNING **: 16:12:14.506: Theme parsing error: gtk.css:1:8: Expected a valid selector
+
+(firefox:18393): Gtk-WARNING **: 16:12:14.507: Theme parsing error: gtk.css:11:2: Expected a valid selector
+
+(/usr/lib/firefox/firefox:18445): Gtk-WARNING **: 16:12:15.181: Theme parsing error: gtk.css:1:8: Expected a valid selector
+
+(/usr/lib/firefox/firefox:18445): Gtk-WARNING **: 16:12:15.181: Theme parsing error: gtk.css:11:2: Expected a valid selector
+
+(/usr/lib/firefox/firefox:18465): Gtk-WARNING **: 16:12:15.314: Theme parsing error: gtk.css:1:8: Expected a valid selector
+
+(/usr/lib/firefox/firefox:18465): Gtk-WARNING **: 16:12:15.314: Theme parsing error: gtk.css:11:2: Expected a valid selector
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+
+(/usr/lib/firefox/firefox:18541): Gtk-WARNING **: 16:12:16.226: Theme parsing error: gtk.css:1:8: Expected a valid selector
+
+(/usr/lib/firefox/firefox:18541): Gtk-WARNING **: 16:12:16.226: Theme parsing error: gtk.css:11:2: Expected a valid selector
+1613664736304	Marionette	INFO	Listening on port 33977
+1613664736407	Marionette	WARN	TLS certificate errors will be ignored for this session
+1613664736418	Marionette	ERROR	[15] No reply from Marionette:Register
+1613664755246	Marionette	INFO	Stopped listening on port 33977
+1613664767786	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile5yi3k4"
+
+(firefox:18649): Gtk-WARNING **: 16:12:47.809: Theme parsing error: gtk.css:1:8: Expected a valid selector
+
+(firefox:18649): Gtk-WARNING **: 16:12:47.809: Theme parsing error: gtk.css:11:2: Expected a valid selector
+
+(/usr/lib/firefox/firefox:18700): Gtk-WARNING **: 16:12:48.524: Theme parsing error: gtk.css:1:8: Expected a valid selector
+
+(/usr/lib/firefox/firefox:18700): Gtk-WARNING **: 16:12:48.525: Theme parsing error: gtk.css:11:2: Expected a valid selector
+
+(/usr/lib/firefox/firefox:18720): Gtk-WARNING **: 16:12:48.662: Theme parsing error: gtk.css:1:8: Expected a valid selector
+
+(/usr/lib/firefox/firefox:18720): Gtk-WARNING **: 16:12:48.662: Theme parsing error: gtk.css:11:2: Expected a valid selector
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1613664769445	Marionette	INFO	Listening on port 41405
+
+(/usr/lib/firefox/firefox:18794): Gtk-WARNING **: 16:12:49.483: Theme parsing error: gtk.css:1:8: Expected a valid selector
+
+(/usr/lib/firefox/firefox:18794): Gtk-WARNING **: 16:12:49.484: Theme parsing error: gtk.css:11:2: Expected a valid selector
+1613664769540	Marionette	WARN	TLS certificate errors will be ignored for this session
+1613664769550	Marionette	ERROR	[15] No reply from Marionette:Register
+1613664777399	Marionette	INFO	Stopped listening on port 41405
+1613664828394	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileheKYa9"
+
+(firefox:18913): Gtk-WARNING **: 16:13:48.418: Theme parsing error: gtk.css:1:8: Expected a valid selector
+
+(firefox:18913): Gtk-WARNING **: 16:13:48.419: Theme parsing error: gtk.css:11:2: Expected a valid selector
+
+(/usr/lib/firefox/firefox:18964): Gtk-WARNING **: 16:13:49.126: Theme parsing error: gtk.css:1:8: Expected a valid selector
+
+(/usr/lib/firefox/firefox:18964): Gtk-WARNING **: 16:13:49.126: Theme parsing error: gtk.css:11:2: Expected a valid selector
+
+(/usr/lib/firefox/firefox:18984): Gtk-WARNING **: 16:13:49.255: Theme parsing error: gtk.css:1:8: Expected a valid selector
+
+(/usr/lib/firefox/firefox:18984): Gtk-WARNING **: 16:13:49.256: Theme parsing error: gtk.css:11:2: Expected a valid selector
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+
+(/usr/lib/firefox/firefox:19059): Gtk-WARNING **: 16:13:50.119: Theme parsing error: gtk.css:1:8: Expected a valid selector
+
+(/usr/lib/firefox/firefox:19059): Gtk-WARNING **: 16:13:50.119: Theme parsing error: gtk.css:11:2: Expected a valid selector
+1613664830219	Marionette	INFO	Listening on port 46003
+1613664830316	Marionette	WARN	TLS certificate errors will be ignored for this session
+1613664830326	Marionette	ERROR	[15] No reply from Marionette:Register
+1613664838752	Marionette	INFO	Stopped listening on port 46003
+1613665314905	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofilec8MW1A"
+
+(firefox:19244): Gtk-WARNING **: 16:21:54.928: Theme parsing error: gtk.css:1:8: Expected a valid selector
+
+(firefox:19244): Gtk-WARNING **: 16:21:54.929: Theme parsing error: gtk.css:11:2: Expected a valid selector
+
+(/usr/lib/firefox/firefox:19295): Gtk-WARNING **: 16:21:55.637: Theme parsing error: gtk.css:1:8: Expected a valid selector
+
+(/usr/lib/firefox/firefox:19295): Gtk-WARNING **: 16:21:55.637: Theme parsing error: gtk.css:11:2: Expected a valid selector
+
+(/usr/lib/firefox/firefox:19315): Gtk-WARNING **: 16:21:55.768: Theme parsing error: gtk.css:1:8: Expected a valid selector
+
+(/usr/lib/firefox/firefox:19315): Gtk-WARNING **: 16:21:55.768: Theme parsing error: gtk.css:11:2: Expected a valid selector
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1613665316500	Marionette	INFO	Listening on port 33331
+1613665316525	Marionette	WARN	TLS certificate errors will be ignored for this session
+1613665316534	Marionette	ERROR	[15] No reply from Marionette:Register
+
+(/usr/lib/firefox/firefox:19394): Gtk-WARNING **: 16:21:56.603: Theme parsing error: gtk.css:1:8: Expected a valid selector
+
+(/usr/lib/firefox/firefox:19394): Gtk-WARNING **: 16:21:56.603: Theme parsing error: gtk.css:11:2: Expected a valid selector
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1613665331668	Marionette	INFO	Stopped listening on port 33331
+1613665375906	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile1TxhDs"
+
+(firefox:19530): Gtk-WARNING **: 16:22:55.935: Theme parsing error: gtk.css:1:8: Expected a valid selector
+
+(firefox:19530): Gtk-WARNING **: 16:22:55.935: Theme parsing error: gtk.css:11:2: Expected a valid selector
+
+(/usr/lib/firefox/firefox:19580): Gtk-WARNING **: 16:22:56.633: Theme parsing error: gtk.css:1:8: Expected a valid selector
+
+(/usr/lib/firefox/firefox:19580): Gtk-WARNING **: 16:22:56.633: Theme parsing error: gtk.css:11:2: Expected a valid selector
+
+(/usr/lib/firefox/firefox:19600): Gtk-WARNING **: 16:22:56.765: Theme parsing error: gtk.css:1:8: Expected a valid selector
+
+(/usr/lib/firefox/firefox:19600): Gtk-WARNING **: 16:22:56.765: Theme parsing error: gtk.css:11:2: Expected a valid selector
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1613665377630	Marionette	INFO	Listening on port 39891
+
+(/usr/lib/firefox/firefox:19678): Gtk-WARNING **: 16:22:57.695: Theme parsing error: gtk.css:1:8: Expected a valid selector
+
+(/usr/lib/firefox/firefox:19678): Gtk-WARNING **: 16:22:57.696: Theme parsing error: gtk.css:11:2: Expected a valid selector
+1613665377743	Marionette	WARN	TLS certificate errors will be ignored for this session
+1613665377753	Marionette	ERROR	[15] No reply from Marionette:Register
+1613665386641	Marionette	INFO	Stopped listening on port 39891
+1613665474045	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofilegT7TiL"
+
+(firefox:19785): Gtk-WARNING **: 16:24:34.070: Theme parsing error: gtk.css:1:8: Expected a valid selector
+
+(firefox:19785): Gtk-WARNING **: 16:24:34.071: Theme parsing error: gtk.css:11:2: Expected a valid selector
+
+(/usr/lib/firefox/firefox:19840): Gtk-WARNING **: 16:24:34.755: Theme parsing error: gtk.css:1:8: Expected a valid selector
+
+(/usr/lib/firefox/firefox:19840): Gtk-WARNING **: 16:24:34.755: Theme parsing error: gtk.css:11:2: Expected a valid selector
+
+(/usr/lib/firefox/firefox:19860): Gtk-WARNING **: 16:24:34.894: Theme parsing error: gtk.css:1:8: Expected a valid selector
+
+(/usr/lib/firefox/firefox:19860): Gtk-WARNING **: 16:24:34.894: Theme parsing error: gtk.css:11:2: Expected a valid selector
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+
+(/usr/lib/firefox/firefox:19932): Gtk-WARNING **: 16:24:35.762: Theme parsing error: gtk.css:1:8: Expected a valid selector
+
+(/usr/lib/firefox/firefox:19932): Gtk-WARNING **: 16:24:35.762: Theme parsing error: gtk.css:11:2: Expected a valid selector
+1613665475855	Marionette	INFO	Listening on port 36071
+1613665475962	Marionette	WARN	TLS certificate errors will be ignored for this session
+1613665475972	Marionette	ERROR	[15] No reply from Marionette:Register
+1613665485344	Marionette	INFO	Stopped listening on port 36071
+1613665613248	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileFCPSYK"
+
+(firefox:20067): Gtk-WARNING **: 16:26:53.276: Theme parsing error: gtk.css:1:8: Expected a valid selector
+
+(firefox:20067): Gtk-WARNING **: 16:26:53.276: Theme parsing error: gtk.css:11:2: Expected a valid selector
+
+(/usr/lib/firefox/firefox:20120): Gtk-WARNING **: 16:26:53.993: Theme parsing error: gtk.css:1:8: Expected a valid selector
+
+(/usr/lib/firefox/firefox:20120): Gtk-WARNING **: 16:26:53.993: Theme parsing error: gtk.css:11:2: Expected a valid selector
+
+(/usr/lib/firefox/firefox:20140): Gtk-WARNING **: 16:26:54.130: Theme parsing error: gtk.css:1:8: Expected a valid selector
+
+(/usr/lib/firefox/firefox:20140): Gtk-WARNING **: 16:26:54.130: Theme parsing error: gtk.css:11:2: Expected a valid selector
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+
+(/usr/lib/firefox/firefox:20215): Gtk-WARNING **: 16:26:55.232: Theme parsing error: gtk.css:1:8: Expected a valid selector
+
+(/usr/lib/firefox/firefox:20215): Gtk-WARNING **: 16:26:55.232: Theme parsing error: gtk.css:11:2: Expected a valid selector
+1613665615319	Marionette	INFO	Listening on port 43663
+1613665615366	Marionette	WARN	TLS certificate errors will be ignored for this session
+1613665615375	Marionette	ERROR	[15] No reply from Marionette:Register
+1613665626165	Marionette	INFO	Stopped listening on port 43663
+1613665634157	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofilez666Fi"
+
+(firefox:20287): Gtk-WARNING **: 16:27:14.179: Theme parsing error: gtk.css:1:8: Expected a valid selector
+
+(firefox:20287): Gtk-WARNING **: 16:27:14.180: Theme parsing error: gtk.css:11:2: Expected a valid selector
+
+(/usr/lib/firefox/firefox:20338): Gtk-WARNING **: 16:27:14.877: Theme parsing error: gtk.css:1:8: Expected a valid selector
+
+(/usr/lib/firefox/firefox:20338): Gtk-WARNING **: 16:27:14.877: Theme parsing error: gtk.css:11:2: Expected a valid selector
+
+(/usr/lib/firefox/firefox:20358): Gtk-WARNING **: 16:27:15.005: Theme parsing error: gtk.css:1:8: Expected a valid selector
+
+(/usr/lib/firefox/firefox:20358): Gtk-WARNING **: 16:27:15.005: Theme parsing error: gtk.css:11:2: Expected a valid selector
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+
+(/usr/lib/firefox/firefox:20433): Gtk-WARNING **: 16:27:16.063: Theme parsing error: gtk.css:1:8: Expected a valid selector
+
+(/usr/lib/firefox/firefox:20433): Gtk-WARNING **: 16:27:16.063: Theme parsing error: gtk.css:11:2: Expected a valid selector
+1613665636132	Marionette	INFO	Listening on port 42887
+1613665636176	Marionette	WARN	TLS certificate errors will be ignored for this session
+1613665636186	Marionette	ERROR	[15] No reply from Marionette:Register
+1613665657070	Marionette	INFO	Stopped listening on port 42887
+1613665668194	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofilek4fBLE"
+
+(firefox:20547): Gtk-WARNING **: 16:27:48.230: Theme parsing error: gtk.css:1:8: Expected a valid selector
+
+(firefox:20547): Gtk-WARNING **: 16:27:48.230: Theme parsing error: gtk.css:11:2: Expected a valid selector
+
+(/usr/lib/firefox/firefox:20600): Gtk-WARNING **: 16:27:48.919: Theme parsing error: gtk.css:1:8: Expected a valid selector
+
+(/usr/lib/firefox/firefox:20600): Gtk-WARNING **: 16:27:48.920: Theme parsing error: gtk.css:11:2: Expected a valid selector
+
+(/usr/lib/firefox/firefox:20620): Gtk-WARNING **: 16:27:49.052: Theme parsing error: gtk.css:1:8: Expected a valid selector
+
+(/usr/lib/firefox/firefox:20620): Gtk-WARNING **: 16:27:49.054: Theme parsing error: gtk.css:11:2: Expected a valid selector
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+
+(/usr/lib/firefox/firefox:20695): Gtk-WARNING **: 16:27:50.235: Theme parsing error: gtk.css:1:8: Expected a valid selector
+
+(/usr/lib/firefox/firefox:20695): Gtk-WARNING **: 16:27:50.236: Theme parsing error: gtk.css:11:2: Expected a valid selector
+1613665670318	Marionette	INFO	Listening on port 46025
+1613665670416	Marionette	WARN	TLS certificate errors will be ignored for this session
+1613665670425	Marionette	ERROR	[15] No reply from Marionette:Register
+
+(/usr/lib/firefox/firefox:20799): Gtk-WARNING **: 16:28:35.720: Theme parsing error: gtk.css:1:8: Expected a valid selector
+
+(/usr/lib/firefox/firefox:20799): Gtk-WARNING **: 16:28:35.720: Theme parsing error: gtk.css:11:2: Expected a valid selector
+1613665718114	Marionette	INFO	Stopped listening on port 46025
+1613665759767	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofilegi6MCN"
+
+(firefox:20889): Gtk-WARNING **: 16:29:19.802: Theme parsing error: gtk.css:1:8: Expected a valid selector
+
+(firefox:20889): Gtk-WARNING **: 16:29:19.802: Theme parsing error: gtk.css:11:2: Expected a valid selector
+
+(/usr/lib/firefox/firefox:20941): Gtk-WARNING **: 16:29:20.529: Theme parsing error: gtk.css:1:8: Expected a valid selector
+
+(/usr/lib/firefox/firefox:20941): Gtk-WARNING **: 16:29:20.530: Theme parsing error: gtk.css:11:2: Expected a valid selector
+
+(/usr/lib/firefox/firefox:20961): Gtk-WARNING **: 16:29:20.654: Theme parsing error: gtk.css:1:8: Expected a valid selector
+
+(/usr/lib/firefox/firefox:20961): Gtk-WARNING **: 16:29:20.655: Theme parsing error: gtk.css:11:2: Expected a valid selector
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1613665761423	Marionette	INFO	Listening on port 40353
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1613665761486	Marionette	WARN	TLS certificate errors will be ignored for this session
+1613665761495	Marionette	ERROR	[15] No reply from Marionette:Register
+
+(/usr/lib/firefox/firefox:21037): Gtk-WARNING **: 16:29:21.540: Theme parsing error: gtk.css:1:8: Expected a valid selector
+
+(/usr/lib/firefox/firefox:21037): Gtk-WARNING **: 16:29:21.541: Theme parsing error: gtk.css:11:2: Expected a valid selector
+1613665767943	Marionette	INFO	Stopped listening on port 40353
+1613665832589	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileYqFLQw"
+
+(firefox:21141): Gtk-WARNING **: 16:30:32.623: Theme parsing error: gtk.css:1:8: Expected a valid selector
+
+(firefox:21141): Gtk-WARNING **: 16:30:32.623: Theme parsing error: gtk.css:11:2: Expected a valid selector
+
+(/usr/lib/firefox/firefox:21191): Gtk-WARNING **: 16:30:33.305: Theme parsing error: gtk.css:1:8: Expected a valid selector
+
+(/usr/lib/firefox/firefox:21191): Gtk-WARNING **: 16:30:33.305: Theme parsing error: gtk.css:11:2: Expected a valid selector
+
+(/usr/lib/firefox/firefox:21211): Gtk-WARNING **: 16:30:33.434: Theme parsing error: gtk.css:1:8: Expected a valid selector
+
+(/usr/lib/firefox/firefox:21211): Gtk-WARNING **: 16:30:33.434: Theme parsing error: gtk.css:11:2: Expected a valid selector
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1613665834088	Marionette	INFO	Listening on port 40043
+1613665834108	Marionette	WARN	TLS certificate errors will be ignored for this session
+1613665834117	Marionette	ERROR	[15] No reply from Marionette:Register
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+
+(/usr/lib/firefox/firefox:21289): Gtk-WARNING **: 16:30:34.304: Theme parsing error: gtk.css:1:8: Expected a valid selector
+
+(/usr/lib/firefox/firefox:21289): Gtk-WARNING **: 16:30:34.305: Theme parsing error: gtk.css:11:2: Expected a valid selector
+1613665842904	Marionette	INFO	Stopped listening on port 40043
+1613665916396	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileYhrtla"
+
+(firefox:21411): Gtk-WARNING **: 16:31:56.428: Theme parsing error: gtk.css:1:8: Expected a valid selector
+
+(firefox:21411): Gtk-WARNING **: 16:31:56.428: Theme parsing error: gtk.css:11:2: Expected a valid selector
+
+(/usr/lib/firefox/firefox:21461): Gtk-WARNING **: 16:31:57.061: Theme parsing error: gtk.css:1:8: Expected a valid selector
+
+(/usr/lib/firefox/firefox:21461): Gtk-WARNING **: 16:31:57.061: Theme parsing error: gtk.css:11:2: Expected a valid selector
+
+(/usr/lib/firefox/firefox:21481): Gtk-WARNING **: 16:31:57.190: Theme parsing error: gtk.css:1:8: Expected a valid selector
+
+(/usr/lib/firefox/firefox:21481): Gtk-WARNING **: 16:31:57.190: Theme parsing error: gtk.css:11:2: Expected a valid selector
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1613665918036	Marionette	INFO	Listening on port 42517
+
+(/usr/lib/firefox/firefox:21559): Gtk-WARNING **: 16:31:58.077: Theme parsing error: gtk.css:1:8: Expected a valid selector
+
+(/usr/lib/firefox/firefox:21559): Gtk-WARNING **: 16:31:58.077: Theme parsing error: gtk.css:11:2: Expected a valid selector
+1613665918133	Marionette	WARN	TLS certificate errors will be ignored for this session
+1613665918159	Marionette	ERROR	[15] No reply from Marionette:Register
+1613665926083	Marionette	INFO	Stopped listening on port 42517
+1613665931637	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileZxJrXF"
+
+(firefox:21626): Gtk-WARNING **: 16:32:11.660: Theme parsing error: gtk.css:1:8: Expected a valid selector
+
+(firefox:21626): Gtk-WARNING **: 16:32:11.660: Theme parsing error: gtk.css:11:2: Expected a valid selector
+
+(/usr/lib/firefox/firefox:21676): Gtk-WARNING **: 16:32:12.346: Theme parsing error: gtk.css:1:8: Expected a valid selector
+
+(/usr/lib/firefox/firefox:21676): Gtk-WARNING **: 16:32:12.347: Theme parsing error: gtk.css:11:2: Expected a valid selector
+
+(/usr/lib/firefox/firefox:21696): Gtk-WARNING **: 16:32:12.477: Theme parsing error: gtk.css:1:8: Expected a valid selector
+
+(/usr/lib/firefox/firefox:21696): Gtk-WARNING **: 16:32:12.477: Theme parsing error: gtk.css:11:2: Expected a valid selector
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1613665933201	Marionette	INFO	Listening on port 37965
+1613665933257	Marionette	WARN	TLS certificate errors will be ignored for this session
+1613665933266	Marionette	ERROR	[15] No reply from Marionette:Register
+
+(/usr/lib/firefox/firefox:21772): Gtk-WARNING **: 16:32:13.332: Theme parsing error: gtk.css:1:8: Expected a valid selector
+
+(/usr/lib/firefox/firefox:21772): Gtk-WARNING **: 16:32:13.332: Theme parsing error: gtk.css:11:2: Expected a valid selector
+1613665939415	Marionette	INFO	Stopped listening on port 37965
+1613665982123	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileHxPS6P"
+
+(firefox:21873): Gtk-WARNING **: 16:33:02.151: Theme parsing error: gtk.css:1:8: Expected a valid selector
+
+(firefox:21873): Gtk-WARNING **: 16:33:02.152: Theme parsing error: gtk.css:11:2: Expected a valid selector
+
+(/usr/lib/firefox/firefox:21926): Gtk-WARNING **: 16:33:02.889: Theme parsing error: gtk.css:1:8: Expected a valid selector
+
+(/usr/lib/firefox/firefox:21926): Gtk-WARNING **: 16:33:02.890: Theme parsing error: gtk.css:11:2: Expected a valid selector
+
+(/usr/lib/firefox/firefox:21946): Gtk-WARNING **: 16:33:03.022: Theme parsing error: gtk.css:1:8: Expected a valid selector
+
+(/usr/lib/firefox/firefox:21946): Gtk-WARNING **: 16:33:03.022: Theme parsing error: gtk.css:11:2: Expected a valid selector
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1613665983762	Marionette	INFO	Listening on port 40205
+
+(/usr/lib/firefox/firefox:22023): Gtk-WARNING **: 16:33:03.822: Theme parsing error: gtk.css:1:8: Expected a valid selector
+
+(/usr/lib/firefox/firefox:22023): Gtk-WARNING **: 16:33:03.822: Theme parsing error: gtk.css:11:2: Expected a valid selector
+1613665983877	Marionette	WARN	TLS certificate errors will be ignored for this session
+1613665983887	Marionette	ERROR	[15] No reply from Marionette:Register
+1613665992590	Marionette	INFO	Stopped listening on port 40205
+1613666124246	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofilegSnUkR"
+
+(firefox:22176): Gtk-WARNING **: 16:35:24.272: Theme parsing error: gtk.css:1:8: Expected a valid selector
+
+(firefox:22176): Gtk-WARNING **: 16:35:24.273: Theme parsing error: gtk.css:11:2: Expected a valid selector
+
+(/usr/lib/firefox/firefox:22226): Gtk-WARNING **: 16:35:24.937: Theme parsing error: gtk.css:1:8: Expected a valid selector
+
+(/usr/lib/firefox/firefox:22226): Gtk-WARNING **: 16:35:24.938: Theme parsing error: gtk.css:11:2: Expected a valid selector
+
+(/usr/lib/firefox/firefox:22246): Gtk-WARNING **: 16:35:25.066: Theme parsing error: gtk.css:1:8: Expected a valid selector
+
+(/usr/lib/firefox/firefox:22246): Gtk-WARNING **: 16:35:25.066: Theme parsing error: gtk.css:11:2: Expected a valid selector
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+
+(/usr/lib/firefox/firefox:22320): Gtk-WARNING **: 16:35:25.954: Theme parsing error: gtk.css:1:8: Expected a valid selector
+
+(/usr/lib/firefox/firefox:22320): Gtk-WARNING **: 16:35:25.954: Theme parsing error: gtk.css:11:2: Expected a valid selector
+1613666126022	Marionette	INFO	Listening on port 42173
+1613666126065	Marionette	WARN	TLS certificate errors will be ignored for this session
+1613666126074	Marionette	ERROR	[15] No reply from Marionette:Register
+1613666137946	Marionette	INFO	Stopped listening on port 42173
+1613666200846	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile0l8SAD"
+
+(firefox:22472): Gtk-WARNING **: 16:36:40.906: Theme parsing error: gtk.css:1:8: Expected a valid selector
+
+(firefox:22472): Gtk-WARNING **: 16:36:40.907: Theme parsing error: gtk.css:11:2: Expected a valid selector
+
+(/usr/lib/firefox/firefox:22523): Gtk-WARNING **: 16:36:41.616: Theme parsing error: gtk.css:1:8: Expected a valid selector
+
+(/usr/lib/firefox/firefox:22523): Gtk-WARNING **: 16:36:41.616: Theme parsing error: gtk.css:11:2: Expected a valid selector
+
+(/usr/lib/firefox/firefox:22544): Gtk-WARNING **: 16:36:41.738: Theme parsing error: gtk.css:1:8: Expected a valid selector
+
+(/usr/lib/firefox/firefox:22544): Gtk-WARNING **: 16:36:41.738: Theme parsing error: gtk.css:11:2: Expected a valid selector
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+
+(/usr/lib/firefox/firefox:22617): Gtk-WARNING **: 16:36:42.647: Theme parsing error: gtk.css:1:8: Expected a valid selector
+
+(/usr/lib/firefox/firefox:22617): Gtk-WARNING **: 16:36:42.647: Theme parsing error: gtk.css:11:2: Expected a valid selector
+1613666202719	Marionette	INFO	Listening on port 39923
+1613666202766	Marionette	WARN	TLS certificate errors will be ignored for this session
+1613666202775	Marionette	ERROR	[18] No reply from Marionette:Register
+console.log: WebExtensions: reset-default-search: No addons in our list are installed.
+JavaScript error: resource://activity-stream/lib/PersonalityProvider/PersonalityProvider.jsm, line 84: TypeError: http://%(server)s/dummy/blocklist// is not a valid URL.
+JavaScript error: https://dcc.icgc.org/vendor.bundle.js line 21 > eval, line 294: TypeError: me.header.sq[parseInt(...)] is undefined
+JavaScript error: https://dcc.icgc.org/vendor.bundle.js line 21 > eval, line 294: TypeError: me.header.sq[parseInt(...)] is undefined
+JavaScript error: https://dcc.icgc.org/vendor.bundle.js line 21 > eval, line 294: TypeError: me.header.sq[parseInt(...)] is undefined
+JavaScript error: https://dcc.icgc.org/vendor.bundle.js line 21 > eval, line 294: TypeError: me.header.sq[parseInt(...)] is undefined
+JavaScript error: https://dcc.icgc.org/vendor.bundle.js line 21 > eval, line 294: TypeError: me.header.sq[parseInt(...)] is undefined
+JavaScript error: https://dcc.icgc.org/vendor.bundle.js line 21 > eval, line 294: TypeError: me.header.sq[parseInt(...)] is undefined
+JavaScript error: https://dcc.icgc.org/vendor.bundle.js line 21 > eval, line 294: TypeError: me.header.sq[parseInt(...)] is undefined
+JavaScript error: https://dcc.icgc.org/vendor.bundle.js line 21 > eval, line 294: TypeError: me.header.sq[parseInt(...)] is undefined
+JavaScript error: https://dcc.icgc.org/vendor.bundle.js line 21 > eval, line 294: TypeError: me.header.sq[parseInt(...)] is undefined
+JavaScript error: https://dcc.icgc.org/vendor.bundle.js line 21 > eval, line 294: TypeError: me.header.sq[parseInt(...)] is undefined
+JavaScript error: https://dcc.icgc.org/vendor.bundle.js line 21 > eval, line 294: TypeError: me.header.sq[parseInt(...)] is undefined
+JavaScript error: https://dcc.icgc.org/vendor.bundle.js line 21 > eval, line 294: TypeError: me.header.sq[parseInt(...)] is undefined
+JavaScript error: https://dcc.icgc.org/vendor.bundle.js line 21 > eval, line 294: TypeError: me.header.sq[parseInt(...)] is undefined
+JavaScript error: https://dcc.icgc.org/vendor.bundle.js line 21 > eval, line 294: TypeError: me.header.sq[parseInt(...)] is undefined
+JavaScript error: https://dcc.icgc.org/vendor.bundle.js line 21 > eval, line 294: TypeError: me.header.sq[parseInt(...)] is undefined
+JavaScript error: https://dcc.icgc.org/vendor.bundle.js line 21 > eval, line 294: TypeError: me.header.sq[parseInt(...)] is undefined
+JavaScript error: https://dcc.icgc.org/vendor.bundle.js line 21 > eval, line 294: TypeError: me.header.sq[parseInt(...)] is undefined
+JavaScript error: https://dcc.icgc.org/vendor.bundle.js line 21 > eval, line 294: TypeError: me.header.sq[parseInt(...)] is undefined
+JavaScript error: https://dcc.icgc.org/vendor.bundle.js line 21 > eval, line 294: TypeError: me.header.sq[parseInt(...)] is undefined
+JavaScript error: https://dcc.icgc.org/vendor.bundle.js line 21 > eval, line 294: TypeError: me.header.sq[parseInt(...)] is undefined
+JavaScript error: https://dcc.icgc.org/vendor.bundle.js line 21 > eval, line 294: TypeError: me.header.sq[parseInt(...)] is undefined
+JavaScript error: https://dcc.icgc.org/vendor.bundle.js line 21 > eval, line 294: TypeError: me.header.sq[parseInt(...)] is undefined
+JavaScript error: https://dcc.icgc.org/vendor.bundle.js line 21 > eval, line 294: TypeError: me.header.sq[parseInt(...)] is undefined
+JavaScript error: https://dcc.icgc.org/vendor.bundle.js line 21 > eval, line 294: TypeError: undefined has no properties
+JavaScript error: https://dcc.icgc.org/vendor.bundle.js line 21 > eval, line 294: TypeError: undefined has no properties
+JavaScript error: https://dcc.icgc.org/vendor.bundle.js line 21 > eval, line 294: TypeError: undefined has no properties
+JavaScript error: https://dcc.icgc.org/vendor.bundle.js line 21 > eval, line 294: TypeError: undefined has no properties
+JavaScript error: https://dcc.icgc.org/vendor.bundle.js line 21 > eval, line 294: TypeError: undefined has no properties
+JavaScript error: https://dcc.icgc.org/vendor.bundle.js line 21 > eval, line 294: TypeError: undefined has no properties
+JavaScript error: https://dcc.icgc.org/vendor.bundle.js line 21 > eval, line 294: TypeError: undefined has no properties
+JavaScript error: https://dcc.icgc.org/vendor.bundle.js line 21 > eval, line 294: TypeError: undefined has no properties
+JavaScript error: https://dcc.icgc.org/vendor.bundle.js line 21 > eval, line 294: TypeError: undefined has no properties
+JavaScript error: https://dcc.icgc.org/vendor.bundle.js line 21 > eval, line 294: TypeError: undefined has no properties
+JavaScript error: https://dcc.icgc.org/vendor.bundle.js line 21 > eval, line 294: TypeError: undefined has no properties
+JavaScript error: https://dcc.icgc.org/vendor.bundle.js line 21 > eval, line 294: TypeError: undefined has no properties
+JavaScript error: https://dcc.icgc.org/vendor.bundle.js line 21 > eval, line 294: TypeError: undefined has no properties
+JavaScript error: https://dcc.icgc.org/vendor.bundle.js line 21 > eval, line 294: TypeError: undefined has no properties
+JavaScript error: https://dcc.icgc.org/vendor.bundle.js line 21 > eval, line 294: TypeError: undefined has no properties
+JavaScript error: https://dcc.icgc.org/vendor.bundle.js line 21 > eval, line 294: TypeError: undefined has no properties
+JavaScript error: https://dcc.icgc.org/vendor.bundle.js line 21 > eval, line 294: TypeError: undefined has no properties
+JavaScript error: https://dcc.icgc.org/vendor.bundle.js line 21 > eval, line 294: TypeError: undefined has no properties
+JavaScript error: https://dcc.icgc.org/vendor.bundle.js line 21 > eval, line 294: TypeError: undefined has no properties
+JavaScript error: https://dcc.icgc.org/vendor.bundle.js line 21 > eval, line 294: TypeError: undefined has no properties
+JavaScript error: https://dcc.icgc.org/vendor.bundle.js line 21 > eval, line 294: TypeError: undefined has no properties
+JavaScript error: https://dcc.icgc.org/vendor.bundle.js line 21 > eval, line 294: TypeError: undefined has no properties
+JavaScript error: https://dcc.icgc.org/vendor.bundle.js line 21 > eval, line 294: TypeError: me.header.sq[parseInt(...)] is undefined
+JavaScript error: https://dcc.icgc.org/vendor.bundle.js line 21 > eval, line 294: TypeError: me.header.sq[parseInt(...)] is undefined
+JavaScript error: resource://activity-stream/lib/PersonalityProvider/PersonalityProvider.jsm, line 84: TypeError: http://%(server)s/dummy/blocklist// is not a valid URL.
+JavaScript error: resource://activity-stream/lib/PersonalityProvider/PersonalityProvider.jsm, line 84: TypeError: http://%(server)s/dummy/blocklist// is not a valid URL.
+1613670577634	Marionette	INFO	Stopped listening on port 39923
+1613671400183	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile48U9tV"
+
+(firefox:24877): Gtk-WARNING **: 18:03:20.207: Theme parsing error: gtk.css:1:8: Expected a valid selector
+
+(firefox:24877): Gtk-WARNING **: 18:03:20.207: Theme parsing error: gtk.css:11:2: Expected a valid selector
+
+(/usr/lib/firefox/firefox:24928): Gtk-WARNING **: 18:03:20.885: Theme parsing error: gtk.css:1:8: Expected a valid selector
+
+(/usr/lib/firefox/firefox:24928): Gtk-WARNING **: 18:03:20.886: Theme parsing error: gtk.css:11:2: Expected a valid selector
+
+(/usr/lib/firefox/firefox:24948): Gtk-WARNING **: 18:03:21.018: Theme parsing error: gtk.css:1:8: Expected a valid selector
+
+(/usr/lib/firefox/firefox:24948): Gtk-WARNING **: 18:03:21.018: Theme parsing error: gtk.css:11:2: Expected a valid selector
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+
+(/usr/lib/firefox/firefox:25024): Gtk-WARNING **: 18:03:21.892: Theme parsing error: gtk.css:1:8: Expected a valid selector
+
+(/usr/lib/firefox/firefox:25024): Gtk-WARNING **: 18:03:21.893: Theme parsing error: gtk.css:11:2: Expected a valid selector
+1613671401956	Marionette	INFO	Listening on port 44069
+1613671402008	Marionette	WARN	TLS certificate errors will be ignored for this session
+1613671402017	Marionette	ERROR	[15] No reply from Marionette:Register
+1613671403780	Marionette	INFO	Stopped listening on port 44069
+1613671427373	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofilewTOn3E"
+
+(firefox:25117): Gtk-WARNING **: 18:03:47.393: Theme parsing error: gtk.css:1:8: Expected a valid selector
+
+(firefox:25117): Gtk-WARNING **: 18:03:47.394: Theme parsing error: gtk.css:11:2: Expected a valid selector
+
+(/usr/lib/firefox/firefox:25169): Gtk-WARNING **: 18:03:48.104: Theme parsing error: gtk.css:1:8: Expected a valid selector
+
+(/usr/lib/firefox/firefox:25169): Gtk-WARNING **: 18:03:48.104: Theme parsing error: gtk.css:11:2: Expected a valid selector
+
+(/usr/lib/firefox/firefox:25189): Gtk-WARNING **: 18:03:48.238: Theme parsing error: gtk.css:1:8: Expected a valid selector
+
+(/usr/lib/firefox/firefox:25189): Gtk-WARNING **: 18:03:48.239: Theme parsing error: gtk.css:11:2: Expected a valid selector
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1613671428962	Marionette	INFO	Listening on port 44019
+1613671428999	Marionette	WARN	TLS certificate errors will be ignored for this session
+1613671429008	Marionette	ERROR	[15] No reply from Marionette:Register
+
+(/usr/lib/firefox/firefox:25263): Gtk-WARNING **: 18:03:49.076: Theme parsing error: gtk.css:1:8: Expected a valid selector
+
+(/usr/lib/firefox/firefox:25263): Gtk-WARNING **: 18:03:49.077: Theme parsing error: gtk.css:11:2: Expected a valid selector
+1613671446116	Marionette	INFO	Stopped listening on port 44019
+1613671469404	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileQ5tYEv"
+
+(firefox:25377): Gtk-WARNING **: 18:04:29.433: Theme parsing error: gtk.css:1:8: Expected a valid selector
+
+(firefox:25377): Gtk-WARNING **: 18:04:29.434: Theme parsing error: gtk.css:11:2: Expected a valid selector
+
+(/usr/lib/firefox/firefox:25428): Gtk-WARNING **: 18:04:30.178: Theme parsing error: gtk.css:1:8: Expected a valid selector
+
+(/usr/lib/firefox/firefox:25428): Gtk-WARNING **: 18:04:30.179: Theme parsing error: gtk.css:11:2: Expected a valid selector
+
+(/usr/lib/firefox/firefox:25448): Gtk-WARNING **: 18:04:30.314: Theme parsing error: gtk.css:1:8: Expected a valid selector
+
+(/usr/lib/firefox/firefox:25448): Gtk-WARNING **: 18:04:30.315: Theme parsing error: gtk.css:11:2: Expected a valid selector
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1613671471149	Marionette	INFO	Listening on port 41683
+1613671471239	Marionette	WARN	TLS certificate errors will be ignored for this session
+1613671471249	Marionette	ERROR	[15] No reply from Marionette:Register
+
+(/usr/lib/firefox/firefox:25528): Gtk-WARNING **: 18:04:31.314: Theme parsing error: gtk.css:1:8: Expected a valid selector
+
+(/usr/lib/firefox/firefox:25528): Gtk-WARNING **: 18:04:31.315: Theme parsing error: gtk.css:11:2: Expected a valid selector
+1613671483675	Marionette	INFO	Stopped listening on port 41683
+1613671518243	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile0ChSmU"
+
+(firefox:25678): Gtk-WARNING **: 18:05:18.273: Theme parsing error: gtk.css:1:8: Expected a valid selector
+
+(firefox:25678): Gtk-WARNING **: 18:05:18.273: Theme parsing error: gtk.css:11:2: Expected a valid selector
+
+(/usr/lib/firefox/firefox:25730): Gtk-WARNING **: 18:05:18.934: Theme parsing error: gtk.css:1:8: Expected a valid selector
+
+(/usr/lib/firefox/firefox:25730): Gtk-WARNING **: 18:05:18.934: Theme parsing error: gtk.css:11:2: Expected a valid selector
+
+(/usr/lib/firefox/firefox:25751): Gtk-WARNING **: 18:05:19.050: Theme parsing error: gtk.css:1:8: Expected a valid selector
+
+(/usr/lib/firefox/firefox:25751): Gtk-WARNING **: 18:05:19.050: Theme parsing error: gtk.css:11:2: Expected a valid selector
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1613671519798	Marionette	INFO	Listening on port 33641
+1613671519892	Marionette	WARN	TLS certificate errors will be ignored for this session
+1613671519900	Marionette	ERROR	[18] No reply from Marionette:Register
+
+(/usr/lib/firefox/firefox:25827): Gtk-WARNING **: 18:05:19.949: Theme parsing error: gtk.css:1:8: Expected a valid selector
+
+(/usr/lib/firefox/firefox:25827): Gtk-WARNING **: 18:05:19.949: Theme parsing error: gtk.css:11:2: Expected a valid selector
+1613671531877	Marionette	INFO	Stopped listening on port 33641

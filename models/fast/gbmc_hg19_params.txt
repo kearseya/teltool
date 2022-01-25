@@ -1,0 +1,127 @@
+{'path_smooth': 0.025, 'num_leaves': 4, 'n_estimators': 80, 'max_depth': 3, 'max_bin': 60, 'learning_rate': 0.1, 'extra_trees': False}
+0.8736842105263157
+Index(['avg_adj_cov', 'avg_kc_len_reg', 'avg_len_reg', 'avg_tl_cov',
+       'chr1_2.adj_cov', 'chr1_2.avg_read_len', 'chr1_2.gc', 'chr1_2.kc_len',
+       'chr1_2.kc_len_cov', 'chr1_2.kc_len_reg', 'chr1_2.kc_perc',
+       'chr1_2.len_reg', 'chr1_2.length', 'chr1_2.mapq', 'chr1_2.new',
+       'chr1_2.scqc', 'chr5_0.adj_cov', 'chr5_0.fragments', 'chr5_0.gc',
+       'chr5_0.kc_len', 'chr5_0.kc_len_cov', 'chr5_0.kc_len_reg',
+       'chr5_0.kc_perc', 'chr5_0.len_reg', 'chr5_0.length', 'chr5_0.mapq',
+       'chr5_0.new', 'chr5_0.num_reads', 'chr5_0.scqc', 'chr5_2.adj_cov',
+       'chr5_2.avg_read_len', 'chr5_2.fragments', 'chr5_2.kc_len',
+       'chr5_2.kc_len_cov', 'chr5_2.kc_len_reg', 'chr5_2.kc_perc',
+       'chr5_2.len_reg', 'chr5_2.length', 'chr5_2.mapq', 'chr5_2.new',
+       'chr5_2.num_reads', 'chr5_2.scqc', 'chrX_1.adj_cov',
+       'chrX_1.avg_read_len', 'chrX_1.fragments', 'chrX_1.gc', 'chrX_1.kc_len',
+       'chrX_1.kc_len_cov', 'chrX_1.kc_len_reg', 'chrX_1.kc_perc',
+       'chrX_1.len_reg', 'chrX_1.length', 'chrX_1.mapq', 'chrX_1.new',
+       'chrX_1.num_reads', 'chrX_1.scqc', 'chrY_0.adj_cov',
+       'chrY_0.avg_read_len', 'chrY_0.fragments', 'chrY_0.gc', 'chrY_0.kc_len',
+       'chrY_0.kc_len_cov', 'chrY_0.kc_len_reg', 'chrY_0.kc_perc',
+       'chrY_0.len_reg', 'chrY_0.length', 'chrY_0.mapq', 'chrY_0.new',
+       'chrY_0.num_reads', 'chrY_0.scqc', 'cov_multiplier', 'diff_how_new_cov',
+       'diff_new_mult_cov', 'how_many', 'len_cov', 'mapq1.fragments',
+       'mapq1.gc', 'mapq1.kc_len', 'mapq1.num_reads', 'new_cov',
+       'short.coverage', 'short.fragments', 'short.gc', 'short.kc_len_reg',
+       'short.len_reg', 'short.length', 'short.mapq', 'short.num_reads',
+       'short.num_regs', 'std_tl_cov', 'total_adj_cov', 'total_avg_gc',
+       'total_avg_read_len', 'total_coverage', 'total_how_coverage',
+       'total_kc_len_reg', 'total_kc_perc', 'total_len_reg', 'total_new_96',
+       'total_reads'],
+      dtype='object')
+
+accuracy: 0.8953488372093024
+
+
+
+
+Cross-validation:
+
+   sample  stela  short  model_pred  long_conf  short_conf
+11  DB143   5160  False       False   0.988404    0.011596
+12  DB144   3356   True        True   0.156135    0.843865
+13  DB145   5903  False       False   0.969588    0.030412
+14  DB146   5817  False       False   0.900238    0.099762
+15  DB147   4795  False       False   0.941900    0.058100
+16  DB148   3591   True        True   0.161621    0.838379
+17  DB149   5962  False       False   0.985295    0.014705
+18  DB150   3895  False       False   0.920920    0.079080
+19  DB151   4723  False        True   0.820311    0.179689
+20  DB152   4066  False       False   0.912679    0.087321
+21  DB153   4028  False       False   0.944045    0.055955
+22  DB154   4903  False        True   0.756389    0.243611
+23  DB155   4905  False       False   0.856830    0.143170
+24  DB156   4640  False       False   0.924581    0.075419
+25  DB157   5827  False       False   0.922675    0.077325
+26  DB158   6781  False       False   0.940870    0.059130
+27  DB159   3599   True       False   0.246819    0.753181
+28  DB160   5882  False       False   0.958974    0.041026
+29  DB161   4897  False       False   0.963633    0.036367
+30  DB162   6191  False       False   0.986901    0.013099
+31  DB163   7057  False       False   0.929815    0.070185
+32  DB164   5239  False       False   0.973671    0.026329
+33  DB165   4770  False       False   0.868979    0.131021
+34  DB166   4740  False       False   0.787633    0.212367
+35  DB167   5426  False       False   0.950966    0.049034
+36  DB168   5525  False       False   0.893330    0.106670
+37  DB169   3343   True       False   0.201068    0.798932
+39  DB171   5258  False       False   0.957068    0.042932
+40  DB172   6443  False       False   0.962102    0.037898
+41  DB173   5731  False       False   0.869836    0.130164
+42  DB174   6027  False       False   0.959254    0.040746
+43  DB175   5850  False       False   0.963070    0.036930
+44  DB176   5383  False       False   0.967856    0.032144
+45  DB177   2884   True        True   0.066629    0.933371
+46  DB178   4332  False       False   0.977598    0.022402
+47  DB179   6008  False       False   0.941140    0.058860
+48  DB180   5898  False       False   0.974564    0.025436
+49  DB181   4998  False       False   0.936299    0.063701
+50  DB182   4753  False       False   0.956917    0.043083
+51  DB183   4426  False        True   0.924885    0.075115
+52  DB184   6290  False       False   0.947267    0.052733
+53  DB185   3735   True       False   0.308422    0.691578
+54  DB186   4982  False       False   0.954746    0.045254
+55  DB187   4464  False       False   0.948696    0.051304
+56  DB188   5019  False       False   0.942081    0.057919
+57  DB189   4777  False       False   0.949755    0.050245
+58  DB190   4717  False       False   0.967999    0.032001
+59  DB191   3177   True        True   0.087771    0.912229
+60  DB192   4492  False       False   0.981203    0.018797
+61  DB193   6536  False       False   0.972752    0.027248
+62  DB194   5022  False       False   0.954482    0.045518
+63  DB195   2920   True        True   0.121852    0.878148
+64  DB196   4979  False       False   0.914379    0.085621
+65  DB197   3221   True        True   0.187558    0.812442
+66  DB198   5517  False       False   0.932021    0.067979
+67  DB199   3263   True       False   0.376008    0.623992
+68  DB200   6712  False       False   0.982734    0.017266
+69  DB201   5981  False       False   0.988858    0.011142
+70  DB202   1960   True        True   0.088163    0.911837
+71  DB203   2408   True        True   0.062931    0.937069
+72  DB204   6314  False       False   0.942753    0.057247
+73  DB205   5826  False       False   0.965266    0.034734
+74  DB206   5842  False       False   0.968478    0.031522
+75  DB207   5022  False       False   0.988462    0.011538
+76  DB208   4949  False       False   0.972716    0.027284
+77  DB209   3412   True        True   0.116084    0.883916
+78  DB210   5736  False       False   0.960058    0.039942
+79  DB211   5965  False       False   0.970515    0.029485
+81  DB213   3740   True        True   0.123966    0.876034
+82  DB214   5327  False       False   0.837891    0.162109
+83  DB215   5713  False       False   0.938089    0.061911
+84  DB216   5764  False       False   0.898114    0.101886
+85  DB217   3519   True        True   0.049023    0.950977
+86  DB218   4892  False       False   0.987334    0.012666
+87  DB219   2274   True        True   0.164555    0.835445
+88  DB220   6271  False       False   0.944556    0.055444
+89  DB221   6349  False       False   0.985719    0.014281
+90  DB222   6180  False       False   0.856622    0.143378
+91  DB223   3440   True        True   0.129664    0.870336
+92  DB224   6959  False       False   0.981799    0.018201
+93  DB225   5655  False       False   0.945164    0.054836
+94  DB226   5836  False       False   0.930817    0.069183
+95  DB227   4943  False       False   0.955151    0.044849
+96  DB228   6580  False       False   0.984681    0.015319
+97  DB229   2790   True       False   0.318974    0.681026
+98  DB234   6103  False        True   0.791149    0.208851
+
