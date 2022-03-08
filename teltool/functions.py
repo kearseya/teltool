@@ -20,7 +20,7 @@ from statistics import mode
 import itertools
 from itertools import chain
 import re
-from pathlib import Path
+#from pathlib import Path
 import matplotlib.pyplot as plt
 import matplotlib.lines as mlines
 import matplotlib.transforms as mtransforms
@@ -89,7 +89,7 @@ from sklearn.feature_selection import SequentialFeatureSelector
 from sklearn.inspection import permutation_importance
 from sklearn.model_selection import RandomizedSearchCV
 
-from cteltool.cteltool import *
+from teltool.cteltool import *
 from time_test import *
 
 def count_variant_repeats(seq, targets, targets_to_array, direction, k=6):
@@ -775,15 +775,29 @@ def read_tl_bam(in_dir, ctx, n_threads, bam_files, coords, avg_coverages, chr_pr
                     if processed_f and processed_r:
                         # print(f"unmapped {unmapped} \n paired {paired} \n unpaired {unpaired}")
                         #print(strand_dict)
+                        data[idx]["ff"] = strand_dict["f"]["f"]
+                        data[idx]["fr"] = strand_dict["f"]["r"]
+                        data[idx]["rf"] = strand_dict["r"]["f"]
+                        data[idx]["rr"] = strand_dict["r"]["r"]
+
                         ffc = strand_dict["f"]["f"]/(strand_dict["f"]["f"]+strand_dict["f"]["r"])
                         frc = strand_dict["r"]["f"]/(strand_dict["r"]["f"]+strand_dict["r"]["r"])
                         ftc = (strand_dict["f"]["r"]+strand_dict["r"]["r"])/(strand_dict["f"]["f"]+strand_dict["f"]["r"]+strand_dict["r"]["f"]+strand_dict["r"]["r"])
                         fsb = abs(ffc-frc)/ftc
 
+                        data[idx]["ffc"] = ffc
+                        data[idx]["frc"] = frc
+                        data[idx]["ftc"] = ftc
+                        data[idx]["fsb"] = fsb
+
                         rfc = strand_dict["f"]["r"]/(strand_dict["f"]["f"]+strand_dict["f"]["r"])
                         rrc = strand_dict["r"]["r"]/(strand_dict["r"]["f"]+strand_dict["r"]["r"])
                         rtc = (strand_dict["f"]["f"]+strand_dict["r"]["f"])/(strand_dict["f"]["f"]+strand_dict["f"]["r"]+strand_dict["r"]["f"]+strand_dict["r"]["r"])
                         rsb = abs(rfc-rrc)/rtc
+                        data[idx]["rfc"] = rfc
+                        data[idx]["rrc"] = rrc
+                        data[idx]["rtc"] = rtc
+                        data[idx]["rsb"] = rsb
 
                         #fsb = max([(rfc/frc)/rtc ,
                         #           (rrc*ffc)/rtc])
@@ -1006,7 +1020,7 @@ def read_tl_bam(in_dir, ctx, n_threads, bam_files, coords, avg_coverages, chr_pr
     df["rest_0.perc_cov"] = df[[r+".perc_cov" for r in ["2_0", "4_0", "9_0", "11_0", "13_0", "44_0", "45_0"]]].sum(axis=1)
     #df["short.perc_cov"] = df["short.adj_cov"]/df["total_coverage"]
 
-    df = df.drop(["avg_cov"], axis=1)
+    # df = df.drop(["avg_cov"], axis=1)
 
     table.to_csv("lets_see.csv", index=False)
 

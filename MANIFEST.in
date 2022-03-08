@@ -1,0 +1,10 @@
+include teltool/cteltool/*
+include teltool/models/*
+include teltool/models/fast/*
+include teltool/models/mean_correction/*
+include teltool/reference/*
+include teltool/telmer_set/*
+include teltool/telomere_regions/*
+include teltool/telomere_regions/fast/*
+include teltool/telomere_regions/kmer_collection/*
+include teltool/teltool/*

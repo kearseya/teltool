@@ -15,7 +15,7 @@ from scipy import stats
 from statistics import mode
 from itertools import chain
 import re
-from pathlib import Path
+#from pathlib import Path
 import collections
 from collections import deque
 import matplotlib.pyplot as plt
@@ -84,13 +84,13 @@ import ot
 # from collections import defaultdict
 # from sknn.mlp import Classifier, Convolution, Layer
 
-sys.path.append(str(Path(os.path.realpath(__file__)).parents[0]))
+sys.path.append(str(os.path.dirname(__file__)))
 from functions import *
 from cteltool import *
 
 
 @click.group(chain=True)
-@click.option("-d", type=str, nargs=1, default=os.getcwd(),
+@click.option("-d", type=str, nargs=1, default=os.path.dirname(__file__),
 help="Working directory (default current directory)")
 @click.option("-r", "--reference", type=click.Choice(["telmer", "hg38", "hg19", "hg38c"], case_sensitive=False),
 default="telmer", help="BAM reference genome build", show_default=True)
@@ -104,57 +104,17 @@ help="Verbose mode (progressbar for bam files)")
 # help="Output log file (input name)")
 @click.pass_context
 class cli:
+    """teltool uses ml models to predict telomere lengths from aligned files"""
     def __init__(self, ctx, d, reference, chr, paired, v): #, l):
         ctx.ensure_object(dict)
         ctx.obj["global"] = {"working_directory": d, "reference": reference, "chr": chr, "paired": paired, "verbose": v} #, "verbose": v, "output_log_file": l}
 
 
 
-@cli.command()
-@click.option("-r", "--ref", default=str(os.path.join(Path(os.path.realpath(__file__)).parents[1], "reference", "hg38_cutout_edit.fa")),
-help="Reference file")
-@click.option("-c", "--coords", default=str(os.path.join(Path(os.path.realpath(__file__)).parents[1], "telomere_regions", "hg38_cutout_edit.tsv")),
-help="Coordinates to take kmers from reference")
-@click.option("-l", "--k-len", default=32,
-help="Kmer length (must be even and max 32)")
-@click.option("-o", "--out", default="telmers_rolling_t2t_32.set",
-help="Output set name")
-@click.pass_context
-class colset:
-    """Create kmer set for filtering reads from file (already done)"""
-    def __init__(self, ctx, ref, coords, k_len, out):
-        assert k_len <= 32, "Max len value is 32"
-        assert k_len % 2 == 0, "k-len must be even"
-        if os.path.splitext(coords)[-1].lower() == ".csv":
-            self.coords = pd.read_csv(coords)
-        if os.path.splitext(coords)[-1].lower() == ".tsv":
-            self.coords = pd.read_csv(coords, sep="\t")
-        print(os.path.splitext(coords)[-1])
-        self.coords_list = convert_coords_tuple(self.coords)
-        collect_wanted_kmers(ref, self.coords_list, k_len, f"{out}_{k_len}")
 
 
 
-# @cli.command()
-# @click.option("-r", "--ref", default=str(os.path.join(Path(os.path.realpath(__file__)).parents[1], "reference", "hg38_cutout_edit.fa")),
-# help="Reference file")
-# @click.option("-c", "--coords", default=str(os.path.join(Path(os.path.realpath(__file__)).parents[1], "telomere_regions", "hg38_cutout_edit.tsv")),
-# help="Coordinates to take kmers from reference")
-# @click.option("-l", "--k-len", default=32,
-# help="Kmer length (must be evem and max 32)")
-# @click.option("-o", "--out", default="telmers_rolling_t2t_32",
-# help="Set name")
-# @click.pass_context
-# class dev:
-#     """Create kmer set for filtering reads from file (already done)"""
-#     def __init__(self, ctx, ref, coords, k_len, out):
-#         self.coords = pd.read_csv(coords, sep="\t")
-#         coords_list = convert_coords_tuple(self.coords)
-#         dict_adjacent("/home/alex/Desktop/uni/PhD/TL_prediction/fastq_scan/hap1/", "coverages/coverage_adjusted.csv", "all_lengths.csv")
-#         # py_collect_wanted_kmers("/home/alex/Desktop/uni/PhD/TL_prediction/reference_genomes/hg38.fa", coords_list, 32)
-#         # time_scan_files(["/home/alex/Desktop/uni/PhD/TL_prediction/raw_data/full/DB143.bam"], #[f for f in os.listdir("/home/alex/Desktop/uni/PhD/TL_prediction/tmp") if f.endswith(".bam")],
-#         # k_len,
-#         # "/home/alex/Desktop/uni/PhD/TL_prediction/teltool/telmer_set/python_kmers_32.set")
+
 
 
 @cli.command()
@@ -166,7 +126,7 @@ help="Output directory")
 help="Trim files by kmers (requires realignment) or region")
 @click.option("-s", "--kset", default="telmers_rolling_32",
 help="Set for filtering reads from file(s)")
-@click.option("-r", "--ref", default=str(os.path.join(Path(os.path.realpath(__file__)).parents[1], "reference", "hg38_cutout_edit.fa")),
+@click.option("-r", "--ref", default=str(os.path.join(os.path.dirname(__file__), "reference", "hg38_cutout_edit.fa")),
 help="Path to reference to align to")
 @click.option("-k", default=False, flag_value=True,
 help="Keep fastq files filtered by kmer")
@@ -179,6 +139,8 @@ class trim:
         if not os.path.exists(o):
             os.makedirs(o)
 
+        self.use_unmapped = False
+
         if kmer == True:
             self.coverages = collect_coverage(i, "trim")
             self.coverages = pd.DataFrame.from_dict([self.coverages])
@@ -186,10 +148,10 @@ class trim:
             self.coverages.to_csv("coverages.csv", index=False)
             if os.path.isfile(ref) == False:
                 assert os.path.isfile(ref) == True, "Please provide a valid reference path"
-            ## found in cteltool/cteltool.pyx
+            ## found in cteltool.pyx
             self.read_counts = scan_files(i, o, int(kset.split("_")[-1]),
-            os.path.join(str(Path(os.path.realpath(__file__)).parents[1]), "telmer_set", str(kset)),
-            ref, k, ctx.obj["global"]["verbose"])
+                os.path.join(str(os.path.dirname(__file__)), "telmer_set", str(kset)),
+                ref, k, ctx.obj["global"]["verbose"])
 
         if kmer == False:
             ## collect coverage before trimming
@@ -199,11 +161,11 @@ class trim:
             self.coverages.to_csv("coverages.csv", index=False)
             ## load reference coordinates to trim to
             if ctx.obj["global"]["reference"] == "hg38":
-                self.coords = pd.read_csv(os.path.join(Path(os.path.realpath(__file__)).parents[1], "telomere_regions", "fast", "hg38.tsv"), sep="\t")
+                self.coords = pd.read_csv(os.path.join(os.path.dirname(__file__), "telomere_regions", "fast", "hg38.tsv"), sep="\t")
             if ctx.obj["global"]["reference"] == "hg38c":
-                self.coords = pd.read_csv(os.path.join(Path(os.path.realpath(__file__)).parents[1], "telomere_regions", "fast", "hg38_compat_hg19.tsv"), sep="\t")
+                self.coords = pd.read_csv(os.path.join(os.path.dirname(__file__), "telomere_regions", "fast", "hg38_compat_hg19.tsv"), sep="\t")
             if ctx.obj["global"]["reference"] == "hg19":
-                self.coords = pd.read_csv(os.path.join(Path(os.path.realpath(__file__)).parents[1], "telomere_regions", "fast", "hg19.csv"))
+                self.coords = pd.read_csv(os.path.join(os.path.dirname(__file__), "telomere_regions", "fast", "hg19.csv"))
             if ctx.obj["global"]["reference"] == "telmer":
                 assert ctx.obj["global"]["reference"] != "telmer", "Please specify reference (teltool -ref hg38/hg19 trim --region)"
             ## trim files to reference coordinates
@@ -218,21 +180,23 @@ class trim:
         return args
 
     def trim_bam(self, in_dir, out_dir, coords):
-        ## previously used for unmapped reads
-        # targets_to_array_f = {"CCCTAA": 0, "CCCTGA": 1, "CCCGAA": 2, "CCCTAC": 3, "CCCTCA": 4, "CCCCAA": 5, "CCCTTA": 6,
-        #                    "CCCTAT": 7, "CCCTAG": 8, "CCCAAA": 9}
-        # targets_to_array_f.update({"CCCTTAA": 10, "CCCACT": 11, "CCCCAT": 12, "CCCGCA": 13, "CCCGCT": 14, "CCCTCT": 15})
-        # targets_to_array_r = {"TTAGGG": 0, "TCAGGG": 1, "TTCGGG": 2, "GTAGGG": 3, "TGAGGG": 4, "TTGGGG": 5, "TAAGGG": 6,
-        #                    "ATAGGG": 7, "CTAGGG": 8, "TTTGGG": 9}
-        # targets_to_array_r.update({"TTAAGGG": 10, "AGTGGG": 11, "ATGGGG": 12, "TGCGGG": 13, "AGCGGG": 14, "AGAGGG": 15})
-        # targets_to_array_both = {}
-        # targets_to_array_both.update(targets_to_array_f)
-        # targets_to_array_both.update(targets_to_array_r)
-        # targets_f = make_rotation_keys(targets_to_array_f)
-        # targets_r = make_rotation_keys(targets_to_array_r)
-        # targets_both = make_rotation_keys(targets_to_array_both)
-        # targets_dict = {"forward": targets_f, "reverse": targets_r}
-        # targets_to_array_dict = {"forward": targets_to_array_f, "reverse": targets_to_array_r}
+
+        if self.use_unmapped == True
+            ## previously used for unmapped reads
+            targets_to_array_f = {"CCCTAA": 0, "CCCTGA": 1, "CCCGAA": 2, "CCCTAC": 3, "CCCTCA": 4, "CCCCAA": 5, "CCCTTA": 6,
+                               "CCCTAT": 7, "CCCTAG": 8, "CCCAAA": 9}
+            targets_to_array_f.update({"CCCTTAA": 10, "CCCACT": 11, "CCCCAT": 12, "CCCGCA": 13, "CCCGCT": 14, "CCCTCT": 15})
+            targets_to_array_r = {"TTAGGG": 0, "TCAGGG": 1, "TTCGGG": 2, "GTAGGG": 3, "TGAGGG": 4, "TTGGGG": 5, "TAAGGG": 6,
+                               "ATAGGG": 7, "CTAGGG": 8, "TTTGGG": 9}
+            targets_to_array_r.update({"TTAAGGG": 10, "AGTGGG": 11, "ATGGGG": 12, "TGCGGG": 13, "AGCGGG": 14, "AGAGGG": 15})
+            targets_to_array_both = {}
+            targets_to_array_both.update(targets_to_array_f)
+            targets_to_array_both.update(targets_to_array_r)
+            targets_f = make_rotation_keys(targets_to_array_f)
+            targets_r = make_rotation_keys(targets_to_array_r)
+            targets_both = make_rotation_keys(targets_to_array_both)
+            targets_dict = {"forward": targets_f, "reverse": targets_r}
+            targets_to_array_dict = {"forward": targets_to_array_f, "reverse": targets_to_array_r}
 
         if os.path.isdir(in_dir) == False:
             print("Trimming:    ", in_dir)
@@ -246,18 +210,20 @@ class trim:
                     up = int(chrom_reg["chromEnd"].iloc[i])
                     for read in bamfile.fetch(chromo, low, up):
                         tmpfile.write(read)
-            ## unmapped reads (previously used in model)
-            # bamfile = pysam.AlignmentFile(in_dir, "rb")
-            # for read in bamfile: #.fetch("chr1", 0, until_eof=True):
-            #     if read.is_unmapped == True:
-            #         cf, af, bf, = count_variant_repeats(read.query_alignment_sequence.upper(), targets_f, targets_to_array_f, "forward")
-            #         cr, ar, br, = count_variant_repeats(read.query_alignment_sequence.upper(), targets_r, targets_to_array_r, "reverse")
-            #         if cf >= cr:
-            #             if sum(bf)/read.query_alignment_length > 0.5:
-            #                 tmpfile.write(read)
-            #         if cr > cf:
-            #             if sum(br)/read.query_alignment_length > 0.5:
-            #                 tmpfile.write(read)
+
+            if self.use_unmapped == True:
+                ## unmapped reads (previously used in model)
+                bamfile = pysam.AlignmentFile(in_dir, "rb")
+                for read in bamfile: #.fetch("chr1", 0, until_eof=True):
+                    if read.is_unmapped == True:
+                        cf, af, bf, = count_variant_repeats(read.query_alignment_sequence.upper(), targets_f, targets_to_array_f, "forward")
+                        cr, ar, br, = count_variant_repeats(read.query_alignment_sequence.upper(), targets_r, targets_to_array_r, "reverse")
+                        if cf >= cr:
+                            if sum(bf)/read.query_alignment_length > 0.5:
+                                tmpfile.write(read)
+                        if cr > cf:
+                            if sum(br)/read.query_alignment_length > 0.5:
+                                tmpfile.write(read)
 
             bamfile.close()
             tmpfile.close()
@@ -278,17 +244,20 @@ class trim:
                         up = int(chrom_reg["chromEnd"].iloc[i])
                         for read in bamfile.fetch(chromo, low, up):
                             tmpfile.write(read)
-                ## unmapped reads (previously used in model)
-                # for read in bamfile:#bamfile.fetch("chr1", 0, until_eof=True):
-                #     if read.is_unmapped == True:
-                #         cf, af, bf, = count_variant_repeats(read.query_alignment_sequence.upper(), targets_f, targets_to_array_f, "forward")
-                #         cr, ar, br, = count_variant_repeats(read.query_alignment_sequence.upper(), targets_r, targets_to_array_r, "reverse")
-                #         if cf >= cr:
-                #             if sum(bf)/read.query_alignment_length > 0.5:
-                #                 tmpfile.write(read)
-                #         if cr > cf:
-                #             if sum(br)/read.query_alignment_length > 0.5:
-                #                 tmpfile.write(read)
+
+                if self.use_unmapped == True:
+                    ## unmapped reads (previously used in model)
+                    for read in bamfile:#bamfile.fetch("chr1", 0, until_eof=True):
+                        if read.is_unmapped == True:
+                            cf, af, bf, = count_variant_repeats(read.query_alignment_sequence.upper(), targets_f, targets_to_array_f, "forward")
+                            cr, ar, br, = count_variant_repeats(read.query_alignment_sequence.upper(), targets_r, targets_to_array_r, "reverse")
+                            if cf >= cr:
+                                if sum(bf)/read.query_alignment_length > 0.5:
+                                    tmpfile.write(read)
+                            if cr > cf:
+                                if sum(br)/read.query_alignment_length > 0.5:
+                                    tmpfile.write(read)
+
                 bamfile.close()
                 tmpfile.close()
             print("")
@@ -316,14 +285,14 @@ class trim:
 
 
 
-@cli.command()
+@cli.command(hidden=True)
 @click.option("-i", default="fastq_scan",
 help="Input bam files")
 @click.option("--threads", default=1,
 help="Number of threads")
 @click.option("-l", "--lengths", default="all_lengths.csv",
 help="Input lentghs file")
-@click.option("-c", "--coverage", default="coverages/log_trans_cov.csv", #"coverages/coverage_adjusted.csv",
+@click.option("-c", "--coverage", default=None, #"coverages/coverage_adjusted.csv",
 help="If trimmed files, whole file coverages required")
 @click.option("--paired/--single", is_flag=True, flag_value=True, default=False, show_default=True,
 help="Specify format of length file")
@@ -351,27 +320,33 @@ class train:
             for col in self.avg_coverages_file:
                 self.avg_coverages[col] = np.median(self.avg_coverages_file[col]/len(self.avg_coverages_file.index))
 
-        if model in ["ridge", "linear", "ransac", "rfr", "lasso", "elastic", "mlpr", "gbmr"]:
-            self.model_type = "regression"
         if model in ["neighbors", "LSVC", "SVC", "gp", "tree", "rfc", "mlpc", "ada", "gaus", "quad", "gbmc", "stacking"]:
             self.model_type = "classification"
-
-        if ctx.obj["global"]["reference"] == "hg38":
-            self.coords = pd.read_csv(os.path.join(Path(os.path.realpath(__file__)).parents[1], "telomere_regions", "fast", "hg38.tsv"), sep="\t")
-            self.mod_build = "hg38"
-        if ctx.obj["global"]["reference"] == "hg38c":
-            self.coords = pd.read_csv(os.path.join(Path(os.path.realpath(__file__)).parents[1], "telomere_regions", "fast", "hg38_compat_hg19.tsv"), sep="\t")
-            self.mod_build = "hg19"
-        if ctx.obj["global"]["reference"] == "hg19":
-            self.coords = pd.read_csv(os.path.join(Path(os.path.realpath(__file__)).parents[1], "telomere_regions", "fast", "hg19.csv"))
-            self.mod_build = "hg19"
+        elif model in ["ridge", "linear", "ransac", "rfr", "lasso", "elastic", "mlpr", "gbmr"]:
+            self.model_type = "regression"
+        else:
+            print("Do not know if this is classifier or regressor")
+            return
 
         if ctx.obj["global"]["reference"] == "telmer":
-            self.coords = pd.read_csv(os.path.join(Path(os.path.realpath(__file__)).parents[1], "telomere_regions", "hg38_cutout_edit.tsv"), sep="\t")
+            self.coords = pd.read_csv(os.path.join(os.path.dirname(__file__), "telomere_regions", "hg38_cutout_edit.tsv"), sep="\t")
+            self.mod_build = "telmer"
+        elif ctx.obj["global"]["reference"] == "hg38":
+            self.coords = pd.read_csv(os.path.join(os.path.dirname(__file__), "telomere_regions", "fast", "hg38.tsv"), sep="\t")
+            self.mod_build = "hg38"
+        elif ctx.obj["global"]["reference"] == "hg38c":
+            self.coords = pd.read_csv(os.path.join(os.path.dirname(__file__), "telomere_regions", "fast", "hg38_compat_hg19.tsv"), sep="\t")
+            self.mod_build = "hg19"
+        elif ctx.obj["global"]["reference"] == "hg19":
+            self.coords = pd.read_csv(os.path.join(os.path.dirname(__file__), "telomere_regions", "fast", "hg19.csv"))
+            self.mod_build = "hg19"
+        else:
+            self.coords = pd.read_csv(os.path.join(os.path.dirname(__file__), "telomere_regions", "hg38_cutout_edit.tsv"), sep="\t")
             self.mod_build = "telmer"
 
+
         self.table = read_tl_bam(i, ctx, threads, self.bam_files, self.coords, self.avg_coverages, ctx.obj["global"]["chr"])#, self.std_coverages)
-        self.table.to_csv("chromosome_coverage.csv", index=False)
+        self.table.to_csv("training_data.csv", index=False)
         self.lengths = self.read_lengths_data(lengths, paired, sample_cols, stela_cols)
         #print(self.lengths)
         if paired == False:
@@ -394,7 +369,7 @@ class train:
 
     def read_lengths_data(self, lengths, paired, sample_cols, stela_cols):
         lengths = pd.read_csv(lengths)
-        lengths = lengths[list(chain.from_iterable([sample_cols, stela_cols]))]
+        #lengths = lengths[list(chain.from_iterable([sample_cols, stela_cols]))]
         if paired == False:
             if sample_cols != "sample":
                 lengths = lengths.rename(columns={sample_cols[0]: "sample"})
@@ -561,9 +536,9 @@ class train:
             save = input("Save model? ")
             if save.lower() in ["y", "yes", "t", "true"]:
                 save_name = input("Model name: ")
-                dump(model, os.path.join(Path(os.path.realpath(__file__)).parents[1], "models", save_name+"_"+mod_build))
-                dump(pred_cols, os.path.join(Path(os.path.realpath(__file__)).parents[1], "models", save_name+"_"+mod_build+".list"))
-                dump(mod_stats, os.path.join(Path(os.path.realpath(__file__)).parents[1], "models", save_name+"_"+mod_build+".stats"))
+                dump(model, os.path.join(os.path.dirname(__file__), "models", save_name+"_"+mod_build))
+                dump(pred_cols, os.path.join(os.path.dirname(__file__), "models", save_name+"_"+mod_build+".list"))
+                dump(mod_stats, os.path.join(os.path.dirname(__file__), "models", save_name+"_"+mod_build+".stats"))
             ## Save trained prediction results
             # train.to_csv("train_predicted.csv", index=False)
             return mod_stats, mod, train
@@ -772,9 +747,9 @@ class train:
             save = input("Save model? ")
             if save[0].lower() in ["y", "t"]:
                 save_name = input("Model name: ")
-                dump(model, os.path.join(Path(os.path.realpath(__file__)).parents[1], "models", save_name+"_"+mod_build))
-                dump(pred_cols, os.path.join(Path(os.path.realpath(__file__)).parents[1], "models", save_name+"_"+mod_build+".list"))
-                dump(mod_stats, os.path.join(Path(os.path.realpath(__file__)).parents[1], "models", save_name+"_"+mod_build+".stats"))
+                dump(model, os.path.join(os.path.dirname(__file__), "models", save_name+"_"+mod_build))
+                dump(pred_cols, os.path.join(os.path.dirname(__file__), "models", save_name+"_"+mod_build+".list"))
+                dump(mod_stats, os.path.join(os.path.dirname(__file__), "models", save_name+"_"+mod_build+".stats"))
 
             return mod_stats, mod, train
 
@@ -924,13 +899,13 @@ class train:
 help="Input data directory or bam file")
 @click.option("-c", "--coverage", default="coverage.csv",
 help="If trimmed files, whole file coverages required")
-@click.option("--model", type=click.Choice([f.split("_")[0] for f in os.listdir(os.path.join(Path(os.path.realpath(__file__)).parents[1], "models")) if "." not in f], case_sensitive=False),
+@click.option("--model", type=click.Choice([f.split("_")[0] for f in os.listdir(os.path.join(os.path.dirname(__file__), "models")) if "." not in f], case_sensitive=False),
 default="gbmc", help="Model type, determins regression or classification", show_default=True)
 @click.option("-o", default="predictions",
 help="Output file name")
 @click.pass_context
 class test:
-    """ """
+    """Apply model to sample data for telomere length prediction"""
     def __init__(self, ctx, i, coverage, model, o):
         # test_py_code(self.coords)
         # find_telmers(i, ctx, "fastq", None, None)
@@ -938,7 +913,10 @@ class test:
         self.bam_files = [f for f in self.bam_files if f.endswith(".bam")]
         self.bam_files = sorted(self.bam_files)
 
-        self.coords = pd.read_csv(os.path.join(Path(os.path.realpath(__file__)).parents[1], "telomere_regions", "hg38_cutout_edit.tsv"), sep="\t")
+        self.comparing = True
+        self.plot_gen = True
+
+        self.coords = pd.read_csv(os.path.join(os.path.dirname(__file__), "telomere_regions", "hg38_cutout_edit.tsv"), sep="\t")
 
         #self.avg_coverages_file = pd.read_csv(coverage)
         self.avg_coverages = {}
@@ -950,41 +928,49 @@ class test:
         # if model in ["neighbors", "LSVC", "SVC", "gp", "tree", "rfc", "mlpc", "ada", "gaus", "quad"]:
         #     self.model_type = "classification"
 
-        # if ctx.obj["global"]["reference"] == "hg38":
-        #     self.coords = pd.read_csv(os.path.join(Path(os.path.realpath(__file__)).parents[1], "telomere_regions", "fast", "hg38.tsv"), sep="\t")
-        #     self.mod_build = "hg38"
-        # if ctx.obj["global"]["reference"] == "hg38c":
-        #     self.coords = pd.read_csv(os.path.join(Path(os.path.realpath(__file__)).parents[1], "telomere_regions", "fast", "hg38_compat_hg19.tsv"), sep="\t")
-        #     self.mod_build = "hg19"
-        # if ctx.obj["global"]["reference"] == "hg19":
-        #     self.coords = pd.read_csv(os.path.join(Path(os.path.realpath(__file__)).parents[1], "telomere_regions", "fast", "hg19.tsv"), sep="\t")
-        #     self.mod_build = "hg19"
+        if ctx.obj["global"]["reference"] == "telmer":
+            self.coords = pd.read_csv(os.path.join(os.path.dirname(__file__), "telomere_regions", "hg38_cutout_edit.tsv"), sep="\t")
+            self.mod_build = "telmer"
+        elif ctx.obj["global"]["reference"] == "hg38":
+            self.coords = pd.read_csv(os.path.join(os.path.dirname(__file__), "telomere_regions", "fast", "hg38.tsv"), sep="\t")
+            self.mod_build = "hg38"
+        elif ctx.obj["global"]["reference"] == "hg38c":
+            self.coords = pd.read_csv(os.path.join(os.path.dirname(__file__), "telomere_regions", "fast", "hg38_compat_hg19.tsv"), sep="\t")
+            self.mod_build = "hg19"
+        elif ctx.obj["global"]["reference"] == "hg19":
+            self.coords = pd.read_csv(os.path.join(os.path.dirname(__file__), "telomere_regions", "fast", "hg19.tsv"), sep="\t")
+            self.mod_build = "hg19"
+        else:
+            self.coords = pd.read_csv(os.path.join(os.path.dirname(__file__), "telomere_regions", "hg38_cutout_edit.tsv"), sep="\t")
+            self.mod_build = "telmer"
+
         self.table = read_tl_bam(i, ctx, 1, self.bam_files, self.coords, self.avg_coverages, ctx.obj["global"]["chr"])
 
         #model = #"correction"#"gbmc"
-        self.mod_build = "telmer"
-        self.mod_file = os.path.join(Path(os.path.realpath(__file__)).parents[1], "models", model+"_"+self.mod_build)
+        # self.mod_build = "telmer"
+        self.mod_file = os.path.join(os.path.dirname(__file__), "models", model+"_"+self.mod_build)
         self.model = load(open(self.mod_file, "rb"))
         self.model_params = load(open(self.mod_file+".list", "rb"))
         ## Show trees in model
         # for i in range(255):
         #     tree = lightgbm.plot_tree(self.model, tree_index=i)
         #     plt.show()
-        self.table["g"] = self.table["sample"].apply(lambda x: np.where(x.startswith("DB"), "b", "i"))
-        ## Domain adaptation
-        xs = np.array(self.table[self.table["g"] == "i"][["f_0.perc_cov", "r_0.perc_cov", "rest_0.perc_cov"]])
-        xt = np.array(self.table[self.table["g"] == "b"][["f_0.perc_cov", "r_0.perc_cov", "rest_0.perc_cov"]])
+        if self.comparing == True:
+            self.table["g"] = self.table["sample"].apply(lambda x: np.where(x.startswith("DB"), "b", "i"))
+            ### Domain adaptation
+            xs = np.array(self.table[self.table["g"] == "i"][["f_0.perc_cov", "r_0.perc_cov", "rest_0.perc_cov"]])
+            xt = np.array(self.table[self.table["g"] == "b"][["f_0.perc_cov", "r_0.perc_cov", "rest_0.perc_cov"]])
 
-        # MappingTransport with linear kernel
-        ot_mapping_linear = ot.da.MappingTransport(kernel="linear", mu=1e0, eta=1e-8, bias=True, max_iter=20, verbose=True)
-        ot_mapping_linear.fit(Xs=xs, Xt=xt)
-        # for original source samples, transform applies barycentric mapping
-        transp_Xs_linear = ot_mapping_linear.transform(Xs=xs)
-        print(transp_Xs_linear)
-        print(self.table[self.table["g"] == "i"][["f_0.perc_cov", "r_0.perc_cov", "rest_0.perc_cov"]])
-        self.table.loc[self.table["g"] == "i", ["f_0.perc_cov", "r_0.perc_cov", "rest_0.perc_cov"]] = transp_Xs_linear#pd.DataFrame(transp_Xs_linear)
-        print(self.table[self.table["g"] == "i"][["f_0.perc_cov", "r_0.perc_cov", "rest_0.perc_cov"]])
-        ##
+            ## MappingTransport with linear kernel
+            ot_mapping_linear = ot.da.MappingTransport(kernel="linear", mu=1e0, eta=1e-8, bias=True, max_iter=20, verbose=True)
+            ot_mapping_linear.fit(Xs=xs, Xt=xt)
+            ## for original source samples, transform applies barycentric mapping
+            transp_Xs_linear = ot_mapping_linear.transform(Xs=xs)
+            #print(transp_Xs_linear)
+            #print(self.table[self.table["g"] == "i"][["f_0.perc_cov", "r_0.perc_cov", "rest_0.perc_cov"]])
+            self.table.loc[self.table["g"] == "i", ["f_0.perc_cov", "r_0.perc_cov", "rest_0.perc_cov"]] = transp_Xs_linear #pd.DataFrame(transp_Xs_linear)
+            print(self.table[self.table["g"] == "i"][["f_0.perc_cov", "r_0.perc_cov", "rest_0.perc_cov"]])
+            ###
 
         self.predictions = self.model.predict(self.table[self.model_params])
         self.table["short"] = self.model.predict(self.table[self.model_params])
@@ -996,42 +982,43 @@ class test:
             self.read_cols.append(i+".num_reads")
             #all_data[i+".adj_cov"] = all_data[i+".adj_cov"]/all_data["total_coverage"]
 
-        #self.table["g"] = ["i"]*109+["b"]*90#np.where(self.table["sample"][:2] == "DB", True, False)
-        plt.scatter(self.table[self.table["g"] == "b"]["f_0.perc_cov"], self.table[self.table["g"] == "b"]["r_0.perc_cov"])
-        plt.scatter(self.table[self.table["g"] == "i"]["f_0.perc_cov"], self.table[self.table["g"] == "i"]["r_0.perc_cov"])
-        plt.legend(["bgi", "ill"])
-        plt.xlabel("forward coverage / strand bias")
-        plt.ylabel("reverse coverage / strand bias")
-        plt.show()
 
-        plt.scatter(self.table[self.table["g"] == "b"]["f_0.perc_cov"], self.table[self.table["g"] == "b"]["rest_0.perc_cov"])
-        plt.scatter(self.table[self.table["g"] == "i"]["f_0.perc_cov"], self.table[self.table["g"] == "i"]["rest_0.perc_cov"])
-        plt.legend(["bgi", "ill"])
-        plt.xlabel("forward coverage / strand bias")
-        plt.ylabel("other coverage / strand bias")
-        plt.show()
+        if self.plot_gen == True:
+            #self.table["g"] = ["i"]*109+["b"]*90#np.where(self.table["sample"][:2] == "DB", True, False)
+            plt.scatter(self.table[self.table["g"] == "b"]["f_0.perc_cov"], self.table[self.table["g"] == "b"]["r_0.perc_cov"])
+            plt.scatter(self.table[self.table["g"] == "i"]["f_0.perc_cov"], self.table[self.table["g"] == "i"]["r_0.perc_cov"])
+            plt.legend(["bgi", "ill"])
+            plt.xlabel("forward coverage / strand bias")
+            plt.ylabel("reverse coverage / strand bias")
+            plt.show()
 
-        plt.scatter(self.table[self.table["g"] == "b"]["r_0.perc_cov"], self.table[self.table["g"] == "b"]["rest_0.perc_cov"])
-        plt.scatter(self.table[self.table["g"] == "i"]["r_0.perc_cov"], self.table[self.table["g"] == "i"]["rest_0.perc_cov"])
-        plt.legend(["bgi", "ill"])
-        plt.xlabel("reverse coverage / strand bias")
-        plt.ylabel("other coverage / strand bias")
-        plt.show()
+            plt.scatter(self.table[self.table["g"] == "b"]["f_0.perc_cov"], self.table[self.table["g"] == "b"]["rest_0.perc_cov"])
+            plt.scatter(self.table[self.table["g"] == "i"]["f_0.perc_cov"], self.table[self.table["g"] == "i"]["rest_0.perc_cov"])
+            plt.legend(["bgi", "ill"])
+            plt.xlabel("forward coverage / strand bias")
+            plt.ylabel("other coverage / strand bias")
+            plt.show()
 
+            plt.scatter(self.table[self.table["g"] == "b"]["r_0.perc_cov"], self.table[self.table["g"] == "b"]["rest_0.perc_cov"])
+            plt.scatter(self.table[self.table["g"] == "i"]["r_0.perc_cov"], self.table[self.table["g"] == "i"]["rest_0.perc_cov"])
+            plt.legend(["bgi", "ill"])
+            plt.xlabel("reverse coverage / strand bias")
+            plt.ylabel("other coverage / strand bias")
+            plt.show()
 
-        # plt.scatter(self.table[self.table["g"] == "b"]["f_0.coverage_sc"], self.table[self.table["g"] == "b"]["r_0.coverage_sc"])
-        # plt.scatter(self.table[self.table["g"] == "i"]["f_0.coverage_sc"], self.table[self.table["g"] == "i"]["r_0.coverage_sc"])
-        # plt.legend(["bgi", "ill"])
-        # plt.xlabel("forward coverage / strand bias")
-        # plt.ylabel("reverse coverage / strand bias")
-        # plt.show()
-        # for i in ["f_0", "r_0", "2_0", "4_0", "9_0", "11_0", "13_0", "44_0", "45_0"]:
-        #     plt.hist(self.table[self.table["g"] == "b"][f"{i}.adj_cov"], alpha=0.5)
-        #     plt.hist(self.table[self.table["g"] == "i"][f"{i}.adj_cov"], alpha=0.5)
-        #     plt.show()
-        # plt.hist(self.table[self.table["g"] == "b"]["r_0.adj_cov"], alpha=0.5)
-        # plt.hist(self.table[self.table["g"] == "i"]["r_0.adj_cov"], alpha=0.5)
-        # plt.show()
+            # plt.scatter(self.table[self.table["g"] == "b"]["f_0.coverage_sc"], self.table[self.table["g"] == "b"]["r_0.coverage_sc"])
+            # plt.scatter(self.table[self.table["g"] == "i"]["f_0.coverage_sc"], self.table[self.table["g"] == "i"]["r_0.coverage_sc"])
+            # plt.legend(["bgi", "ill"])
+            # plt.xlabel("forward coverage / strand bias")
+            # plt.ylabel("reverse coverage / strand bias")
+            # plt.show()
+            # for i in ["f_0", "r_0", "2_0", "4_0", "9_0", "11_0", "13_0", "44_0", "45_0"]:
+            #     plt.hist(self.table[self.table["g"] == "b"][f"{i}.adj_cov"], alpha=0.5)
+            #     plt.hist(self.table[self.table["g"] == "i"][f"{i}.adj_cov"], alpha=0.5)
+            #     plt.show()
+            # plt.hist(self.table[self.table["g"] == "b"]["r_0.adj_cov"], alpha=0.5)
+            # plt.hist(self.table[self.table["g"] == "i"]["r_0.adj_cov"], alpha=0.5)
+            # plt.show()
 
         # with pd.option_context('display.max_rows', None):
         #     pd.set_option('display.max_columns', None)
@@ -1053,39 +1040,43 @@ class test:
 
         self.table.to_csv(o+".csv")
 
-        df = pd.DataFrame(self.table.copy())
 
-        fig = plt.figure()
-        ax = fig.add_subplot(projection='3d')
-        ax.scatter(df[(df['g']=="i" and df['short'].bool())]["f_0.perc_cov"], df[(df['g']=="i" and df['short'].bool())]["r_0.perc_cov"], df[(df['g']=="i" and df['short'].bool())]["rest_0.perc_cov"])
-        ax.scatter(df[(df['g']=="i" and not df['short'].bool())]["f_0.perc_cov"], df[(df['g']=="i" and not df['short'].bool())]["r_0.perc_cov"], df[(df['g']=="i" and not df['short'].bool())]["rest_0.perc_cov"])
-        ax.scatter(df[(df['g']=="b" and df['short'].bool())]["f_0.perc_cov"], df[(df['g']=="b" and df['short'].bool())]["r_0.perc_cov"], df[(df['g']=="b" and df['short'].bool())]["rest_0.perc_cov"])
-        ax.scatter(df[(df['g']=="b" and not df['short'].bool())]["f_0.perc_cov"], df[(df['g']=="b" and not df['short'].bool())]["r_0.perc_cov"], df[(df['g']=="b" and not df['short'].bool())]["rest_0.perc_cov"])
+        if self.plot_gen == True:
+            df = pd.DataFrame(self.table.copy())
 
-        fig.legend(["ill short", "ill long", "bgi short", "bgi long"])
+            fig = plt.figure()
+            ax = fig.add_subplot(projection='3d')
+            ax.scatter(df[(df['g']=="i" and df['short'].bool())]["f_0.perc_cov"], df[(df['g']=="i" and df['short'].bool())]["r_0.perc_cov"], df[(df['g']=="i" and df['short'].bool())]["rest_0.perc_cov"])
+            ax.scatter(df[(df['g']=="i" and not df['short'].bool())]["f_0.perc_cov"], df[(df['g']=="i" and not df['short'].bool())]["r_0.perc_cov"], df[(df['g']=="i" and not df['short'].bool())]["rest_0.perc_cov"])
+            ax.scatter(df[(df['g']=="b" and df['short'].bool())]["f_0.perc_cov"], df[(df['g']=="b" and df['short'].bool())]["r_0.perc_cov"], df[(df['g']=="b" and df['short'].bool())]["rest_0.perc_cov"])
+            ax.scatter(df[(df['g']=="b" and not df['short'].bool())]["f_0.perc_cov"], df[(df['g']=="b" and not df['short'].bool())]["r_0.perc_cov"], df[(df['g']=="b" and not df['short'].bool())]["rest_0.perc_cov"])
 
-        ax.set_xlabel('f perc')
-        ax.set_ylabel('r perc')
-        ax.set_zlabel('o perc')
+            fig.legend(["ill short", "ill long", "bgi short", "bgi long"])
 
-        plt.show()
+            ax.set_xlabel('f perc')
+            ax.set_ylabel('r perc')
+            ax.set_zlabel('o perc')
+
+            plt.show()
+
+
 
 @cli.command()
-@click.option("-i", default="tmp",
+@click.option("-i", default=os.getcwd(),
 help="Input data directory or bam file")
-@click.option("-c", "--coverage", default="coverages/coverage_adjusted.csv",
+@click.option("-c", "--coverage", default=None,
 help="If trimmed files, whole file coverages required")
-@click.option("--model", type=click.Choice([f.split("_")[0] for f in os.listdir(os.path.join(Path(os.path.realpath(__file__)).parents[1], "models", "fast")) if "." not in f], case_sensitive=False),
+@click.option("--model", type=click.Choice([f.split("_")[0] for f in os.listdir(os.path.join(os.path.dirname(__file__), "models", "fast")) if "." not in f], case_sensitive=False),
 default="gbmc", help="Model type, determins regression or classification", show_default=True)
-@click.option("-o", default="predictions",
+@click.option("-o", default="fast_predictions",
 help="Output file name")
 @click.pass_context
 class fast:
-    """If aligned to hg38 a faster region based method can be used"""
+    """If aligned to hg38 a faster region based method can be used (not recommended)"""
     def __init__(self, ctx, i, coverage, model, o):
         threads = 1
         print(ctx)
-        #print([f for f in os.listdir(os.path.join(Path(os.path.realpath(__file__)).parents[1], "models")) if not f.endswith(".list")])
+        #print([f for f in os.listdir(os.path.join(os.path.dirname(__file__), "models")) if not f.endswith(".list")])
         if os.path.isdir(i):
             self.bam_files = os.listdir(i)
             self.bam_files = [f for f in self.bam_files if f.endswith(".bam")]
@@ -1106,18 +1097,18 @@ class fast:
             self.model_type = "classification"
 
         if ctx.obj["global"]["reference"] == "hg38":
-            self.coords = pd.read_csv(os.path.join(Path(os.path.realpath(__file__)).parents[1], "telomere_regions", "fast", "hg38.tsv"), sep="\t")
+            self.coords = pd.read_csv(os.path.join(os.path.dirname(__file__), "telomere_regions", "fast", "hg38.tsv"), sep="\t")
             self.mod_build = "hg38"
         if ctx.obj["global"]["reference"] == "hg38c":
-            self.coords = pd.read_csv(os.path.join(Path(os.path.realpath(__file__)).parents[1], "telomere_regions", "fast", "hg38_compat_hg19.tsv"), sep="\t")
+            self.coords = pd.read_csv(os.path.join(os.path.dirname(__file__), "telomere_regions", "fast", "hg38_compat_hg19.tsv"), sep="\t")
             self.mod_build = "hg19"
         if ctx.obj["global"]["reference"] == "hg19":
-            self.coords = pd.read_csv(os.path.join(Path(os.path.realpath(__file__)).parents[1], "telomere_regions", "fast", "hg19.tsv"), sep="\t")
+            self.coords = pd.read_csv(os.path.join(os.path.dirname(__file__), "telomere_regions", "fast", "hg19.tsv"), sep="\t")
             self.mod_build = "hg19"
         self.table = read_tl_bam(i, ctx, threads, self.bam_files, self.coords, self.avg_coverages, ctx.obj["global"]["chr"])
 
 
-        self.mod_file = os.path.join(Path(os.path.realpath(__file__)).parents[1], "models", "fast", model+"_"+self.mod_build)
+        self.mod_file = os.path.join(os.path.dirname(__file__), "models", "fast", model+"_"+self.mod_build)
         self.model = load(open(self.mod_file, "rb"))
         self.model_params = load(open(self.mod_file+".list", "rb"))
         ## Show trees in model
@@ -1134,3 +1125,52 @@ class fast:
             print(self.table[["sample", "short", "long_conf", "short_conf"]])
 
         self.table.to_csv(o+".csv")
+
+
+
+## HIDDEN OPTIONS (NOT NEEDED)
+
+@cli.command(hidden=True)
+@click.option("-r", "--ref", default=str(os.path.join(os.path.dirname(__file__), "reference", "hg38_cutout_edit.fa")),
+help="Reference file")
+@click.option("-c", "--coords", default=str(os.path.join(os.path.dirname(__file__), "telomere_regions", "hg38_cutout_edit.tsv")),
+help="Coordinates to take kmers from reference")
+@click.option("-l", "--k-len", default=32,
+help="Kmer length (must be evem and max 32)")
+@click.option("-o", "--out", default="telmers_rolling_t2t_32",
+help="Set name")
+@click.pass_context
+class dev:
+    """For testing"""
+    def __init__(self, ctx, ref, coords, k_len, out):
+        self.coords = pd.read_csv(coords, sep="\t")
+        coords_list = convert_coords_tuple(self.coords)
+        # dict_adjacent("/home/alex/Desktop/uni/PhD/TL_prediction/fastq_scan/hap1/", "coverages/coverage_adjusted.csv", "all_lengths.csv")
+        # py_collect_wanted_kmers("/home/alex/Desktop/uni/PhD/TL_prediction/reference_genomes/hg38.fa", coords_list, 32)
+        # time_scan_files(["/home/alex/Desktop/uni/PhD/TL_prediction/raw_data/full/DB143.bam"], #[f for f in os.listdir("/home/alex/Desktop/uni/PhD/TL_prediction/tmp") if f.endswith(".bam")],
+        # k_len,
+        # "/home/alex/Desktop/uni/PhD/TL_prediction/teltool/telmer_set/python_kmers_32.set")
+
+
+@cli.command(hidden=True)
+@click.option("-r", "--ref", default=str(os.path.join(os.path.dirname(__file__), "reference", "hg38_cutout_edit.fa")),
+help="Reference file")
+@click.option("-c", "--coords", default=str(os.path.join(os.path.dirname(__file__), "telomere_regions", "hg38_cutout_edit.tsv")),
+help="Coordinates to take kmers from reference")
+@click.option("-l", "--k-len", default=32,
+help="Kmer length (must be even and max 32)")
+@click.option("-o", "--out", default="telmers_rolling_t2t_32.set",
+help="Output set name")
+@click.pass_context
+class colset:
+    """Create kmer set for filtering reads from file (already done)"""
+    def __init__(self, ctx, ref, coords, k_len, out):
+        assert k_len <= 32, "Max len value is 32"
+        assert k_len % 2 == 0, "k-len must be even"
+        if os.path.splitext(coords)[-1].lower() == ".csv":
+            self.coords = pd.read_csv(coords)
+        if os.path.splitext(coords)[-1].lower() == ".tsv":
+            self.coords = pd.read_csv(coords, sep="\t")
+        print(os.path.splitext(coords)[-1])
+        self.coords_list = convert_coords_tuple(self.coords)
+        collect_wanted_kmers(ref, self.coords_list, k_len, f"{out}_{k_len}")

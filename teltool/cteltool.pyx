@@ -31,7 +31,7 @@ import subprocess
 import numpy as np
 import array
 from cython.operator cimport dereference
-from cteltool.rollingkutils import *
+#from teltool import rollingutils
 
 #debugging
 from libc.stdio cimport printf
@@ -175,6 +175,12 @@ cdef hash_region_ascii(s, l):
     return reg_kmer_set
 
 
+def basemap():
+    return np.array(['.', 'A', 'C', '.', 'G', '.', '.', '.', 'T', '.', '.', '.', '.', '.', 'N'])
+
+
+def basemap_2_int():
+    return {k: i for i, k in enumerate(basemap())}
 
 def char_to_nibble_array(t):
     # encode as nibble
@@ -235,7 +241,7 @@ def collect_wanted_kmers(referece, coords, l, out, k_type="binary"):
         for k in reg_kmer_set_reverse:
             kmer_set.add(k)
     print(f"KMERS IN SET (K={l}): {len(kmer_set)}")
-    dump(kmer_set, os.path.join(Path(os.path.realpath(__file__)).parents[1], "telmer_set", out))
+    dump(kmer_set, os.path.join(os.path.dirname(__file__), "telmer_set", out))
 
 
 def run_alignment(file_directory, file_prefix, reference, keep_fq=False):
@@ -307,7 +313,7 @@ cdef scan_bam_bar(in_file, out_dir, l, robin_set[uint64_t]& kmers, reference, ke
     fastq_prefix = os.path.splitext(basename)[0]
     first_file = os.path.join(out_dir, fastq_prefix+"_tel1.fq")
     second_file = os.path.join(out_dir, fastq_prefix+"_tel2.fq")
-    reference_check = mappy.Aligner(os.path.join(Path(os.path.realpath(__file__)).parents[1], "reference", "hg38_cutout_edit.fa"), preset="sr")
+    reference_check = mappy.Aligner(os.path.join(os.path.dirname(__file__), "reference", "hg38_cutout_edit.fa"), preset="sr")
     with progressbar.ProgressBar(max_value = n_reads, redirect_stdout=True) as bar:
         for a in file:
             total_reads += 1
@@ -343,7 +349,7 @@ cdef scan_bam_no_bar(in_file, out_dir, l, robin_set[uint64_t]& kmers, reference,
     fastq_prefix = os.path.splitext(basename)[0]
     first_file = os.path.join(out_dir, fastq_prefix+"_tel1.fq")
     second_file = os.path.join(out_dir, fastq_prefix+"_tel2.fq")
-    reference_check = mappy.Aligner(os.path.join(Path(os.path.realpath(__file__)).parents[1], "reference", "hg38_cutout_edit.fa"), preset="sr")
+    reference_check = mappy.Aligner(os.path.join(os.path.dirname(__file__), "reference", "hg38_cutout_edit.fa"), preset="sr")
     for a in file:
         total_reads += 1
         if not a.flag & 3328 and a.flag & 1:
@@ -377,7 +383,7 @@ cdef scan_cram(in_file, out_dir, l, robin_set[uint64_t]& kmers, reference, keep_
     fastq_prefix = os.path.splitext(basename)[0]
     first_file = os.path.join(out_dir, fastq_prefix+"_tel1.fq")
     second_file = os.path.join(out_dir, fastq_prefix+"_tel2.fq")
-    reference_check = mappy.Aligner(os.path.join(Path(os.path.realpath(__file__)).parents[1], "reference", "hg38_cutout_edit.fa"), preset="sr")
+    reference_check = mappy.Aligner(os.path.join(os.path.dirname(__file__), "reference", "hg38_cutout_edit.fa"), preset="sr")
     for a in file:
         if not a.flag & 3328 and a.flag & 1:
             total_reads += 1

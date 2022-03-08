@@ -20,7 +20,7 @@ from statistics import mode
 import itertools
 from itertools import chain
 import re
-from pathlib import Path
+#from pathlib import Path
 import matplotlib.pyplot as plt
 import matplotlib.lines as mlines
 import matplotlib.transforms as mtransforms
@@ -87,7 +87,7 @@ from sklearn.feature_selection import RFE, RFECV
 from sklearn.feature_selection import SequentialFeatureSelector
 from sklearn.inspection import permutation_importance
 
-from cteltool.cteltool import *
+from teltool.cteltool import *
 
 from pysam import AlignmentFile
 

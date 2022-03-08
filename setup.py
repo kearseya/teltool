@@ -119,8 +119,8 @@ print("Extras compiler args", extras)
 # Put your list of cython extension .pxy files here (.pyx not needed)
 for item in ["cteltool"]:
 
-    ext_modules.append(Extension(f"cteltool.{item}",
-                                 [f"cteltool/{item}.pyx"],
+    ext_modules.append(Extension(f"teltool.{item}",
+                                 [f"teltool/{item}.pyx"],
                                  libraries=libraries,
                                  library_dirs=library_dirs,
                                  include_dirs=include_dirs,
@@ -140,7 +140,7 @@ setup(
     # url="https://github.com/kearseya/teltool",
     # description="telomere length prediction",
     license="MIT",
-    version='0.0.1',
+    version='0.0.2',
     python_requires='>=3.7',
     install_requires=[
         'Click',
@@ -162,7 +162,7 @@ setup(
         'edlib',
         'joypy',
 	'POT',
-	'progressbar',
+	'progressbar2',
 	'mappy',
 	'biopython'
         ],
@@ -170,6 +170,7 @@ setup(
     ext_modules=cythonize(ext_modules),
 
     include_package_data=True,
+    data_files=[],
     zip_safe=False,
     entry_points='''
          [console_scripts]
