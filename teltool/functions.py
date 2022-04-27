@@ -920,7 +920,8 @@ def read_tl_bam(in_dir, ctx, n_threads, bam_files, coords, avg_coverages, chr_pr
     table = pd.DataFrame.from_dict(data)
     len_cov_regions = table.columns.difference(["sample"])
     unique_regions = list(set([r.split(".")[0] for r in len_cov_regions]))
-    for mapq in ["mapq0", "mapq1", "short"]: #, "unmapped"]:
+    for mapq in ["mapq0", "mapq1", "short", "ff", "fr", "rf", "rr",
+                    "ffc", "frc", "ftc", "fsb", "rfc", "rrc", "rtc", "rsb"]: #, "unmapped"]:
         unique_regions.remove(mapq)
 
     print(unique_regions)
