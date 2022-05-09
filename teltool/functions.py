@@ -845,9 +845,11 @@ def read_tl_bam(in_dir, ctx, n_threads, bam_files, coords, avg_coverages, chr_pr
                             #print("region", chromo, coverage)
                             if coverage > 0:
                                 if chromo == "f":
+                                    data[idx][f"{chromo}_{i}.unadj_coverage"] = coverage
                                     data[idx][f"{chromo}_{i}.coverage"] = coverage/(ffc)
                                 if chromo == "r":
-                                    data[idx][f"{chromo}_{i}.coverage"] = coverage/(rfc)
+                                    data[idx][f"{chromo}_{i}.unadj_coverage"] = coverage
+                                    data[idx][f"{chromo}_{i}.coverage"] = coverage/(frc)
                             else:
                                 data[idx][f"{chromo}_{i}.coverage"] = 1 # data[idx][f"{chromo}_{i}.length"]/(region_len)
 

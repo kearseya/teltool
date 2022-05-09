@@ -181,7 +181,7 @@ class trim:
 
     def trim_bam(self, in_dir, out_dir, coords):
 
-        if self.use_unmapped == True
+        if self.use_unmapped == True:
             ## previously used for unmapped reads
             targets_to_array_f = {"CCCTAA": 0, "CCCTGA": 1, "CCCGAA": 2, "CCCTAC": 3, "CCCTCA": 4, "CCCCAA": 5, "CCCTTA": 6,
                                "CCCTAT": 7, "CCCTAG": 8, "CCCAAA": 9}
@@ -903,6 +903,8 @@ help="If trimmed files, whole file coverages required")
 default="gbmc", help="Model type, determins regression or classification", show_default=True)
 @click.option("-o", default="predictions",
 help="Output file name")
+@click.option("-s", default=None,
+help="Shortcut to processed bam spreadsheet")
 @click.pass_context
 class test:
     """Apply model to sample data for telomere length prediction"""
@@ -944,7 +946,11 @@ class test:
             self.coords = pd.read_csv(os.path.join(os.path.dirname(__file__), "telomere_regions", "hg38_cutout_edit.tsv"), sep="\t")
             self.mod_build = "telmer"
 
-        self.table = read_tl_bam(i, ctx, 1, self.bam_files, self.coords, self.avg_coverages, ctx.obj["global"]["chr"])
+        if s == None:
+            self.table = read_tl_bam(i, ctx, 1, self.bam_files, self.coords, self.avg_coverages, ctx.obj["global"]["chr"])
+        else:
+            self.table = pd.read_csv(s)
+            self.table.drop(["short", "short_conf", "long_conf"], 1)
 
         #model = #"correction"#"gbmc"
         # self.mod_build = "telmer"
