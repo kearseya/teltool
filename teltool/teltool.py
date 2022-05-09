@@ -908,7 +908,7 @@ help="Shortcut to processed bam spreadsheet")
 @click.pass_context
 class test:
     """Apply model to sample data for telomere length prediction"""
-    def __init__(self, ctx, i, coverage, model, o):
+    def __init__(self, ctx, i, coverage, model, o, s):
         # test_py_code(self.coords)
         # find_telmers(i, ctx, "fastq", None, None)
         self.bam_files = os.listdir(i)
