@@ -261,7 +261,7 @@ def run_alignment(file_directory, file_prefix, reference, keep_fq=False):
     os.remove(os.path.join(file_directory, file_prefix+"_tel.sam"))
 
 
-def scan_files(file_dir, out_dir, l, telmers, referece, keep_fq, verbose):
+def scan_files(file_dir, out_dir, l, telmers, referece, keep_fq, verbose, name):
     cdef robin_set[uint64_t] kmers
     kmer_set = load(telmers)
     if os.path.isdir(file_dir) == True:
@@ -276,17 +276,20 @@ def scan_files(file_dir, out_dir, l, telmers, referece, keep_fq, verbose):
     for i, f in enumerate(files):
         print(os.path.basename(f), "(",  i+1, "/", len(files), ")")
         t0 = time.time()
-        if f.split(".")[-1] == "bam":
-            if verbose == True:
-                reads[f] = scan_bam_bar(f, out_dir, l, kmers, referece, keep_fq)
-            if verbose == False:
-                reads[f] = scan_bam_no_bar(f, out_dir, l, kmers, referece, keep_fq)
-        if f.split(".")[-1] == "cram":
-            reads[f] = scan_cram(f, out_dir, l, kmers, referece, keep_fq)
-        if f.split(".")[-1].lower() in ["fq", "fastq"]:
-            scan_fastx(f, l, kmers)
-        print(f"TIME TAKEN ({os.path.basename(f)} {round(os.path.getsize(f)/(1024**3), 2)}GB): {str(datetime.timedelta(seconds=round(time.time()-t0)))}    (matched: {reads[f][1]}/{reads[f][0]} reads)")
-        # print(os.path.basename(f)," MATCHED: ", reads[f][1], "/", reads[f][0], "(", "%.4f"%(reads[f][1]/reads[f][0]), "% )")
+        if f != "-":
+            if f.split(".")[-1] == "bam":
+                if verbose == True:
+                    reads[f] = scan_bam_bar(f, out_dir, l, kmers, referece, keep_fq)
+                if verbose == False:
+                    reads[f] = scan_bam_no_bar(f, out_dir, l, kmers, referece, keep_fq, "rb", name)
+            if f.split(".")[-1] == "cram":
+                reads[f] = scan_cram(f, out_dir, l, kmers, referece, keep_fq)
+            if f.split(".")[-1].lower() in ["fq", "fastq"]:
+                scan_fastx(f, l, kmers)
+            print(f"TIME TAKEN ({os.path.basename(f)} {round(os.path.getsize(f)/(1024**3), 2)}GB): {str(datetime.timedelta(seconds=round(time.time()-t0)))}    (matched: {reads[f][1]}/{reads[f][0]} reads)")
+            # print(os.path.basename(f)," MATCHED: ", reads[f][1], "/", reads[f][0], "(", "%.4f"%(reads[f][1]/reads[f][0]), "% )")
+        else:
+            reads[f] = scan_bam_no_bar(f, out_dir, l, kmers, referece, keep_fq, "r", name)
     return reads
 
 # for progress bar on bam file
@@ -338,15 +341,18 @@ cdef scan_bam_bar(in_file, out_dir, l, robin_set[uint64_t]& kmers, reference, ke
     return (total_reads, match_reads)
 
 ## no progress bar
-cdef scan_bam_no_bar(in_file, out_dir, l, robin_set[uint64_t]& kmers, reference, keep_fq):
-    cdef AlignmentFile file = AlignmentFile(in_file, "rb")
+cdef scan_bam_no_bar(in_file, out_dir, l, robin_set[uint64_t]& kmers, reference, keep_fq, kind, name):
+    cdef AlignmentFile file = AlignmentFile(in_file, kind)
     cdef AlignedSegment a
     cdef AlignedSegment b
     cdef int total_reads = 0
     cdef int match_reads = 0
     read_pairs = dict()
     basename = os.path.basename(in_file)
-    fastq_prefix = os.path.splitext(basename)[0]
+    if in_file != "-":
+        fastq_prefix = os.path.splitext(basename)[0]
+    else:
+        fastq_prefix = name
     first_file = os.path.join(out_dir, fastq_prefix+"_tel1.fq")
     second_file = os.path.join(out_dir, fastq_prefix+"_tel2.fq")
     reference_check = mappy.Aligner(os.path.join(os.path.dirname(__file__), "reference", "hg38_cutout_edit.fa"), preset="sr")

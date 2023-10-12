@@ -324,7 +324,7 @@ def soft_clip_qual_corr(reads):
 
 
 
-def collect_coverage(i, step="other"):
+def collect_coverage(i, step="other", name=None):
     if step == "trim":
         print("Collecting coverage before trimming (saved to cwd/coverages.csv)")
     else:
@@ -342,22 +342,26 @@ def collect_coverage(i, step="other"):
         return cov
 
     if os.path.isdir(i) == False:
-        if i.endswith(".bam"):
+        if i.endswith(".bam") or i == "-":
             files = [i]
     if os.path.isdir(i) == True:
         files = os.listdir(i)
         files = [f for f in files if f.endswith(".bam")]
 
     for f in files:
-        lengths = set()
-        af = pysam.AlignmentFile(f)
-        seg = af.head(100000)
-        for read in seg:
-            lengths.add(read.query_alignment_length)
-        cov = index_stats(f, max(lengths))
-        fnwe = os.path.basename(f)
-        fn = os.path.splitext(fnwe)[0]
-        coverages[fn] = cov
+        if f != "-":
+            lengths = set()
+            af = pysam.AlignmentFile(f)
+            seg = af.head(100000)
+            for read in seg:
+                lengths.add(read.query_alignment_length)
+            cov = index_stats(f, max(lengths))
+            fnwe = os.path.basename(f)
+            fn = os.path.splitext(fnwe)[0]
+            coverages[fn] = cov
+        else:
+            print("Faking coverage for stream")
+            coverages[name] = 10
 
     return coverages
 

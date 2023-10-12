@@ -130,10 +130,12 @@ help="Set for filtering reads from file(s)")
 help="Path to reference to align to")
 @click.option("-k", default=False, flag_value=True,
 help="Keep fastq files filtered by kmer")
+@click.option("-n", "--name", default=None,
+help="Name of sample if streaming input")
 @click.pass_context
 class trim:
 	"""Trim BAM file(s) to only telomere regions"""
-	def __init__(self, ctx, i, o, kmer, kset, ref, k):
+	def __init__(self, ctx, i, o, kmer, kset, ref, k, name):
 		self.args = self.read_cl_arg(ctx, i, o)
 		ctx.obj["args"] = self.args
 		if not os.path.exists(o):
@@ -142,7 +144,7 @@ class trim:
 		self.use_unmapped = False
 
 		if kmer == True:
-			self.coverages = collect_coverage(i, "trim")
+			self.coverages = collect_coverage(i, "trim", name)
 			self.coverages = pd.DataFrame.from_dict([self.coverages])
 			print(self.coverages)
 			self.coverages.to_csv("coverages.csv", index=False)
@@ -151,7 +153,7 @@ class trim:
 			## found in cteltool.pyx
 			self.read_counts = scan_files(i, o, int(kset.split("_")[-1]),
 				os.path.join(str(os.path.dirname(__file__)), "telmer_set", str(kset)),
-				ref, k, ctx.obj["global"]["verbose"])
+				ref, k, ctx.obj["global"]["verbose"], name)
 
 		if kmer == False:
 			## collect coverage before trimming
