@@ -254,9 +254,9 @@ def run_alignment(file_directory, file_prefix, reference, keep_fq=False):
       os.remove(os.path.join(file_directory, file_prefix+"_tel1.fq"))
       os.remove(os.path.join(file_directory, file_prefix+"_tel2.fq"))
     ## convert to bam file
-    con_command = f"samtools view -hbS {file_prefix}_tel.sam -o {file_prefix}_tel.bam"
-    con = subprocess.run(con_command.split(), cwd=file_directory)
-    # pysam.view("-hbS", os.path.join(file_directory, file_prefix+".sam"), "-o", os.path.join(file_directory, file_prefix+".bam"))
+    # con_command = f"samtools view -hbS {file_prefix}_tel.sam -o {file_prefix}_tel.bam"
+    # con = subprocess.run(con_command.split(), cwd=file_directory)
+    pysam.view("-hbS", os.path.join(file_directory, file_prefix+"_tel.sam"), "-o", os.path.join(file_directory, file_prefix+"_tel.bam"), catch_stdout=False)
     ## remove sam file
     os.remove(os.path.join(file_directory, file_prefix+"_tel.sam"))
 
